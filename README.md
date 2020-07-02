@@ -1,6 +1,8 @@
-# `cdn.cubing.net/esm`
+# `cdn.cubing.net`
 
-For now, look at [here](./public/web_modules/.htaccess) for a list of packages.
+## JavaScript Modules (`/esm`)
+
+For now, look [here](./src/esm/public/web_modules/.htaccess) for a list of packages.
 
 Example:
 
@@ -22,6 +24,6 @@ Example:
 <scramble-display id="disp" scramble="R U R'"></scramble-display>
 ```
 
-## Import Map
+### Import Map
 
 At <https://cdn.cubing.net/esm/import-map.json> . Most browsers don't support it yet.
