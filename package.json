@@ -1,0 +1,15 @@
+{
+  "name": "snowpack-cubing",
+  "main": "index.js",
+  "dependencies": {
+    "cubing": "^0.10.6",
+    "scramble-display": "^0.2.1"
+  },
+  "devDependencies": {
+    "snowpack": "^2.6.3"
+  },
+  "scripts": {
+    "build": "npx snowpack build && cp ./public/web_modules/.htaccess build/web_modules",
+    "clean": "rm -rf ./build"
+  }
+}

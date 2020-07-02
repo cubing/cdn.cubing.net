@@ -1,0 +1,12 @@
+Header always set Access-Control-Allow-Origin "*"
+
+Redirect /esm/cubing/alg /esm/cubing/alg.js
+Redirect /esm/cubing/bluetooth /esm/cubing/bluetooth.js
+Redirect /esm/cubing/kpuzzle /esm/cubing/kpuzzle.js
+Redirect /esm/cubing/puzzle-geometry /esm/cubing/puzzle-geometry.js
+Redirect /esm/cubing/stream /esm/cubing/stream.js
+Redirect /esm/cubing/twisty /esm/cubing/twisty.js
+
+Redirect /esm/three /esm/three.js
+
+Redirect /esm/scramble-display /esm/scramble-display.js
