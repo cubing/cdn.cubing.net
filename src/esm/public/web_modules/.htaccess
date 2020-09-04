@@ -3,6 +3,7 @@ Header always set Access-Control-Allow-Origin "*"
 Redirect /esm/cubing/alg /esm/cubing/alg.js
 Redirect /esm/cubing/bluetooth /esm/cubing/bluetooth.js
 Redirect /esm/cubing/kpuzzle /esm/cubing/kpuzzle.js
+Redirect /esm/cubing/protocol /esm/cubing/protocol.js
 Redirect /esm/cubing/puzzle-geometry /esm/cubing/puzzle-geometry.js
 Redirect /esm/cubing/stream /esm/cubing/stream.js
 Redirect /esm/cubing/twisty /esm/cubing/twisty.js
