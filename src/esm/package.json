@@ -2,8 +2,8 @@
   "name": "snowpack-cubing",
   "main": "index.js",
   "dependencies": {
-    "cubing": "^0.12.12",
-    "scramble-display": "^0.2.5"
+    "cubing": "^0.12.17",
+    "scramble-display": "^0.2.6"
   },
   "devDependencies": {
     "snowpack": "^2.6.3"
