@@ -4,7 +4,7 @@
   "dependencies": {
     "cubing": "^0.12.17",
     "scramble-display": "^0.2.6",
-    "scrambles": "^0.1.12"
+    "scrambles": "^0.1.13"
   },
   "devDependencies": {
     "snowpack": "^2.6.3"
