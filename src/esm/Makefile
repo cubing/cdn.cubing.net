@@ -22,6 +22,6 @@ deploy: clean build
 	rsync -avz \
 		--exclude .DS_Store \
 		--exclude .git \
-		./build/web_modules/ \
+		./build/ \
 		${SFTP_PATH}
 	echo "\nDone deploying. Go to ${URL}\n"

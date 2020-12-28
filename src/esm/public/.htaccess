@@ -11,6 +11,6 @@ Redirect /esm/cubing/twisty /esm/web_modules/cubing/twisty.js
 Redirect /esm/comlink /esm/web_modules/comlink.js
 Redirect /esm/three /esm/web_modules/three.js
 
-Redirect /esm/scrambles /esm/web_modules/scrambles/esm-browser.js
-Redirect /esm/web_modules/scrambles/scrambles-worker.js /esm/web_modules/scrambles/esm-browser-worker-entry-for-cdn-cubing-net.js
+Redirect /esm/scrambles /esm/web_modules/scrambles/esm-browser-bundle-global.js
+Redirect /esm/web_modules/scrambles/scrambles-worker.js /esm/web_modules/scrambles/esm-browser-bundle-global-worker-entry-for-cdn-cubing-net.js
 Redirect /esm/scramble-display /esm/web_modules/scramble-display.js

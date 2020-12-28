@@ -4,13 +4,13 @@
   "dependencies": {
     "cubing": "^0.12.17",
     "scramble-display": "^0.2.6",
-    "scrambles": "^0.1.5"
+    "scrambles": "^0.1.11"
   },
   "devDependencies": {
     "snowpack": "^2.6.3"
   },
   "scripts": {
-    "build": "npx snowpack build && cp ./public/web_modules/.htaccess build/web_modules",
+    "build": "npx snowpack build ; cp ./public/.htaccess build",
     "clean": "rm -rf ./build"
   }
 }
