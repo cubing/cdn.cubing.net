@@ -2,7 +2,7 @@
   "name": "snowpack-cubing",
   "main": "index.js",
   "dependencies": {
-    "cubing": "^0.14.8",
+    "cubing": "^0.15.0",
     "scramble-display": "^0.2.6",
     "scrambles": "^0.1.13"
   },
