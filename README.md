@@ -26,4 +26,4 @@ Example:
 
 ### Import Map
 
-At <https://cdn.cubing.net/esm/import-map.json> . Most browsers don't support it yet.
+At <https://cdn.cubing.net/esm/web_modules/import-map.json> . Most browsers don't support it yet.
