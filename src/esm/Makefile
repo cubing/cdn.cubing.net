@@ -25,3 +25,4 @@ deploy: clean build
 		./build/ \
 		${SFTP_PATH}
 	echo "\nDone deploying. Go to ${URL}\n"
+	@echo "Make sure to clear the cache at https://dash.cloudflare.com/208031631d4ac31c91e4bd4d0442d15d/cubing.net/caching/configuration"
