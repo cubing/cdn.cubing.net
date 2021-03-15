@@ -5,6 +5,7 @@ Redirect /esm/cubing/bluetooth /esm/web_modules/cubing/bluetooth.js
 Redirect /esm/cubing/kpuzzle /esm/web_modules/cubing/kpuzzle.js
 Redirect /esm/cubing/protocol /esm/web_modules/cubing/protocol.js
 Redirect /esm/cubing/puzzle-geometry /esm/web_modules/cubing/puzzle-geometry.js
+Redirect /esm/cubing/puzzles /esm/web_modules/cubing/puzzles.js
 Redirect /esm/cubing/stream /esm/web_modules/cubing/stream.js
 Redirect /esm/cubing/twisty /esm/web_modules/cubing/twisty.js
 
