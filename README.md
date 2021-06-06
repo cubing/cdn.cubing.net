@@ -19,7 +19,3 @@ Example:
 </script>
 <scramble-display id="disp" scramble="R U R'"></scramble-display>
 ```
-
-### Import Map
-
-At <https://cdn.cubing.net/esm/web_modules/import-map.json> . Most browsers don't support it yet.
