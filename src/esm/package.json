@@ -1,5 +1,4 @@
 {
-  "name": "snowpack-cubing",
   "main": "index.js",
   "dependencies": {
     "cubing": "^0.18.0",
