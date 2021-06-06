@@ -6,11 +6,11 @@
     "scramble-display": "^0.2.6",
     "scrambles": "^0.1.13"
   },
-  "devDependencies": {
-    "snowpack": "^2.6.3"
-  },
   "scripts": {
-    "build": "npx snowpack build ; cp ./public/.htaccess build",
-    "clean": "rm -rf ./build"
+    "build": "npx esbuild --format=esm --bundle --splitting --target=es2020 --outdir=dist --external:crypto --external:worker_threads src/*/*.ts src/cubing/*/*.ts && cp src/.htaccess dist/.htaccess",
+    "clean": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.6"
   }
 }
