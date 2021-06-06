@@ -4,7 +4,8 @@
   "dependencies": {
     "cubing": "^0.18.0",
     "scramble-display": "^0.2.6",
-    "scrambles": "^0.1.13"
+    "scrambles": "^0.1.13",
+    "three": "^0.129.0"
   },
   "scripts": {
     "build": "npx esbuild --format=esm --bundle --splitting --target=es2020 --outdir=dist --external:crypto --external:worker_threads src/*/*.ts src/cubing/*/*.ts && cp src/.htaccess dist/.htaccess",
