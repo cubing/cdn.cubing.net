@@ -7,7 +7,7 @@
     "three": "^0.129.0"
   },
   "scripts": {
-    "build": "npx esbuild --format=esm --bundle --splitting --target=es2020 --outdir=dist --external:crypto --external:worker_threads src/*/*.ts src/cubing/*/*.ts && cp src/.htaccess dist/.htaccess",
+    "build": "npx esbuild --format=esm --bundle --splitting --target=es2020 --outdir=dist --external:crypto --external:worker_threads src/*/*.ts src/cubing/*/*.ts && cp -R src/static/ dist/",
     "clean": "rm -rf ./dist"
   },
   "devDependencies": {

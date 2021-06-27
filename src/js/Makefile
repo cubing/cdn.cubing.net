@@ -14,8 +14,8 @@ DYNAMIC_NPM_COMMANDS = $(shell cat package.json | npx jq --raw-output ".scripts 
 update-Makefile:
 	sed -i "" "s/^NPM_COMMANDS = .*$$/NPM_COMMANDS = ${DYNAMIC_NPM_COMMANDS}/" Makefile
 
-SFTP_PATH = "towns.dreamhost.com:~/cdn.cubing.net/esm"
-URL       = "https://cdn.cubing.net/esm/"
+SFTP_PATH = "towns.dreamhost.com:~/cdn.cubing.net/js"
+URL       = "https://cdn.cubing.net/js/"
 
 .PHONY: deploy
 deploy: clean build
