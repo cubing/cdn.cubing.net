@@ -2,7 +2,7 @@
 # https://github.com/lgarron/Makefile-scripts
 
 # Note: the first command becomes the default `make` target.
-NPM_COMMANDS = build clean
+NPM_COMMANDS = build build-js clean
 
 .PHONY: $(NPM_COMMANDS)
 $(NPM_COMMANDS):
@@ -14,7 +14,7 @@ DYNAMIC_NPM_COMMANDS = $(shell cat package.json | npx jq --raw-output ".scripts 
 update-Makefile:
 	sed -i "" "s/^NPM_COMMANDS = .*$$/NPM_COMMANDS = ${DYNAMIC_NPM_COMMANDS}/" Makefile
 
-SFTP_PATH = "towns.dreamhost.com:~/cdn.cubing.net/js"
+SFTP_PATH = "towns.dreamhost.com:~/cdn.cubing.net/"
 URL       = "https://cdn.cubing.net/js/"
 
 .PHONY: deploy
