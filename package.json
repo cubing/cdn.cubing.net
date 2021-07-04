@@ -1,7 +1,7 @@
 {
   "main": "index.js",
   "dependencies": {
-    "cubing": "^0.18.10",
+    "cubing": "^0.18.12",
     "scramble-display": "^0.2.6",
     "scrambles": "^0.1.13",
     "three": "^0.129.0"
