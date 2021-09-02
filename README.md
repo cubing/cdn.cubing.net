@@ -2,7 +2,7 @@
 
 ## JavaScript Modules (`/js`)
 
-For now, look [here](./src/js/src/) for a list of packages.
+For now, look [here](./src/js/) to see what packages are available.
 
 Example:
 
