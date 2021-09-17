@@ -17,7 +17,7 @@ update-Makefile:
 .PHONY: deploy
 deploy: clean build upload purge-cache
 
-SFTP_PATH = "towns.dreamhost.com:~/cdn.cubing.net/"
+SFTP_PATH = "cubing_deploy@towns.dreamhost.com:~/cdn.cubing.net/"
 URL       = "https://cdn.cubing.net/js/"
 
 .PHONY: upload
