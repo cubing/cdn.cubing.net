@@ -15,7 +15,6 @@ const importMap = {
     "cubing/stream": "https://cdn.cubing.net/js/cubing/stream",
     "cubing/twisty": "https://cdn.cubing.net/js/cubing/twisty",
     "scramble-display": "https://cdn.cubing.net/js/scramble-display",
-    scrambles: "https://cdn.cubing.net/js/scrambles",
     three: "https://cdn.cubing.net/js/three",
   },
 };

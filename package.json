@@ -3,7 +3,6 @@
   "dependencies": {
     "cubing": "^0.21.0",
     "scramble-display": "^0.4.0",
-    "scrambles": "^0.1.13",
     "three": "^0.129.0"
   },
   "scripts": {
