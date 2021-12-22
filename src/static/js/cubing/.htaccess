@@ -1,3 +1,0 @@
-<FilesMatch "^[^.]+$">
-  ForceType text/javascript
-</FilesMatch>
