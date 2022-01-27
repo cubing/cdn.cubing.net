@@ -3,7 +3,7 @@
   "dependencies": {
     "cubing": "^0.25.1",
     "scramble-display": "^0.4.2",
-    "three": "^0.129.0"
+    "three": "^0.137.0"
   },
   "scripts": {
     "build": "npm run build-js && cp -R src/static/ dist/",
