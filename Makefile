@@ -49,7 +49,7 @@ purge-cache:
 
 .PHONY: purge-cache-curl
 purge-cache-curl:
-	curl -X POST \
+	@curl -X POST \
 		"https://api.cloudflare.com/client/v4/zones/7b91bf928f250f49db1f4dcdff946304/purge_cache" \
 		-H "Authorization: Bearer "$(shell env PINENTRY_USER_DATA=USE_CURSES=1 gpg --decrypt ${HOME}/.ssh/env/CLOUDFLARE_CUBING_NET_CACHE_TOKEN.gpg) \
 		-H "Content-Type:application/json" \
