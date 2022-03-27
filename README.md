@@ -19,3 +19,7 @@ Example:
 </script>
 <scramble-display id="disp" scramble="R U R'"></scramble-display>
 ```
+
+## Maintenance
+
+See [the maintenance docs](./docs/maintenance.md).
