@@ -1,3 +1,0 @@
-Header always set Access-Control-Allow-Origin "*"
-
-Redirect 301 /esm /js
