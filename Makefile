@@ -19,6 +19,13 @@ update-Makefile:
 .PHONY: deploy
 deploy: clean build upload purge-cache
 
+.PHONY: roll-cubing-publish
+roll-cubing-publish:
+	git pull
+	make roll-cubing
+	git push
+	make deploy
+
 .PHONY: roll-cubing
 roll-cubing:
 	bash script/roll-cubing.bash
