@@ -5,10 +5,7 @@
 Run:
 
 ```shell
-git pull
-make roll-cubing
-git push
-make deploy
+make roll-cubing-publish
 ```
 
 This will automatically generate a commit [like this](https://github.com/cubing/cdn.cubing.net/commit/04ca0ff18a894bc2a6c3838d3cb19d4916d7ec99) and requires access to:
