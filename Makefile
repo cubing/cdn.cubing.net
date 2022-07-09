@@ -19,16 +19,16 @@ update-Makefile:
 .PHONY: deploy
 deploy: clean build upload purge-cache
 
-.PHONY: roll-cubing-publish
-roll-cubing-publish:
+.PHONY: roll-cubing
+roll-cubing:
 	git pull
-	make roll-cubing
+	make roll-cubing-commit
 	git push
 	make deploy
 
-.PHONY: roll-cubing
-roll-cubing:
-	bash script/roll-cubing.bash
+.PHONY: roll-cubing-commit
+roll-cubing-commit:
+	bash script/roll-cubing-commit.bash
 
 SFTP_PATH = "cubing_deploy@towns.dreamhost.com:~/cdn.cubing.net/"
 URL       = "https://cdn.cubing.net/js/"
