@@ -1,3 +1,0 @@
-Header always set Access-Control-Allow-Origin "*"
-
-DirectoryIndex index.js
