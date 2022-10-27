@@ -48,7 +48,7 @@ purge-cache:
 	@echo "To enable dev mode (Cloudflare cache disabled), use:"
 	@echo "https://dash.cloudflare.com/208031631d4ac31c91e4bd4d0442d15d/cubing.net/caching/configuration"
 	@echo ""
-	@echo "To purge the cache once, touch your YubiKey now. (May need to enter a PIN first.)"
+	@echo "To purge the cache once, sudo auth now."
 	@echo "Ctrl-C to cancel"
 	@echo ""
 # We have to put this in a separate target so that the shell command doesn't hold up the echo statements:
@@ -58,6 +58,6 @@ purge-cache:
 purge-cache-curl:
 	@curl -X POST \
 		"https://api.cloudflare.com/client/v4/zones/7b91bf928f250f49db1f4dcdff946304/purge_cache" \
-		-H "Authorization: Bearer "$(shell env PINENTRY_USER_DATA=USE_CURSES=1 gpg --decrypt ${HOME}/.ssh/env/CLOUDFLARE_CUBING_NET_CACHE_TOKEN.gpg) \
+		-H "Authorization: Bearer $(shell sudo cat ~/.ssh/secrets/CLOUDFLARE_CUBING_NET_CACHE_TOKEN.txt)" \
 		-H "Content-Type:application/json" \
 		--data '{"purge_everything":true}' # purge cubing.net cache
