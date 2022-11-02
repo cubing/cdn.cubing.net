@@ -26,6 +26,22 @@ roll-cubing:
 	git push
 	make deploy
 
+# NOT `.PHONY`!
+../cubing.js:
+	$(error `cubing.js` is not available in the parent folder of this repo)
+
+.PHONY: link-cubing.js
+link-cubing.js: ../cubing.js
+	cd ../cubing.js && make link
+	npm link cubing
+
+.PHONY: unlink-cubing.js
+unlink-cubing.js:
+	npm unlink cubing
+
+.PHONY: deploy-with-linked-cubing.js
+deploy-with-linked-cubing.js: link-cubing.js deploy unlink-cubing.js
+
 .PHONY: roll-cubing-commit
 roll-cubing-commit:
 	bash script/roll-cubing-commit.bash
