@@ -2,8 +2,8 @@
   "main": "index.js",
   "dependencies": {
     "cubing": "^0.32.1",
-    "scramble-display": "^0.5.2",
-    "three": "^0.129.0"
+    "scramble-display": "^0.5.3",
+    "three": "^0.146.0"
   },
   "scripts": {
     "build": "npm run build-js && cp -R src/static/ dist/",
@@ -11,6 +11,6 @@
     "clean": "rm -rf ./dist"
   },
   "devDependencies": {
-    "esbuild": "^0.12.6"
+    "esbuild": "^0.15.14"
   }
 }
