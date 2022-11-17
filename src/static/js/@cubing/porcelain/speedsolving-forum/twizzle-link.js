@@ -6,6 +6,17 @@ if (!globalThis.twizzleLinkScript) {
 
   function append() {
     document.body.appendChild(script);
+    const style = document.createElement("style");
+    style.textContent = `
+@font-face {
+  font-family: "Ubuntu";
+  src: url("https://cdn.cubing.net/font/ubuntu/Ubuntu-Regular.ttf");
+}
+twizzle-link {
+  font-family: Ubuntu, -apple-system, Tahoma, sans-serif;
+}
+`;
+    document.body.appendChild(style);
   }
 
   if (document.body) {
