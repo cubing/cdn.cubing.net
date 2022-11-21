@@ -37,10 +37,18 @@ link-cubing.js: ../cubing.js
 
 .PHONY: unlink-cubing.js
 unlink-cubing.js:
-	npm unlink cubing
+	npm install cubing
 
 .PHONY: deploy-with-linked-cubing.js
 deploy-with-linked-cubing.js: link-cubing.js deploy unlink-cubing.js
+
+.PHONY: serve-locally
+serve-locally: build
+	caddy run --adapter caddyfile --config script/dev.Caddyfile
+
+# TODO: dev mode with automatic rebuild.
+.PHONY: serve-locally-with-linked-cubing.js
+serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 
 .PHONY: roll-cubing-commit
 roll-cubing-commit:

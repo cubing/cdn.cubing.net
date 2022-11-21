@@ -1,0 +1,10 @@
+http://localhost:3456 {
+	root * dist
+	file_server {
+		browse
+	}
+	header Access-Control-Allow-Origin "*"
+	route /js/* {
+		header Content-Type "application/javascript"
+	}
+}
