@@ -12,7 +12,7 @@ if (!globalThis.twizzleLinkScript) {
   font-family: "Ubuntu";
   src: url("https://cdn.cubing.net/font/ubuntu/Ubuntu-Regular.ttf");
 }
-twizzle-link {
+twizzle-forum-link {
   font-family: Ubuntu, -apple-system, Tahoma, sans-serif;
   color: black;
 }
