@@ -14,7 +14,6 @@ if (!globalThis.twizzleLinkScript) {
 }
 twizzle-forum-link {
   font-family: Ubuntu, -apple-system, Tahoma, sans-serif;
-  color: black;
 }
 `;
     document.body.appendChild(style);
