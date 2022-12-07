@@ -1,4 +1,4 @@
-http://localhost:3456 {
+http://localhost:3336 {
 	root * dist
 	file_server {
 		browse
