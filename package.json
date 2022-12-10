@@ -7,8 +7,7 @@
     "three": "^0.146.0"
   },
   "scripts": {
-    "build": "npm run build-js && cp -R src/static/ dist/",
-    "build-js": "npx esbuild --format=esm --bundle --splitting --sourcemap --minify --target=es2020 --outdir=dist/js --external:crypto --external:worker_threads src/js/*.ts src/js/cubing/*.ts; for f in dist/js/cubing/*.js dist/js/three.js dist/js/scramble-display.js dist/js/random-uint-below.js; do mv $f ${f%.js}; done",
+    "build": "./script/build.bash",
     "clean": "rm -rf ./dist"
   },
   "devDependencies": {

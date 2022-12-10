@@ -2,7 +2,7 @@
 # https://github.com/lgarron/Makefile-scripts
 
 # Note: the first command becomes the default `make` target.
-NPM_COMMANDS = build build-js clean
+NPM_COMMANDS = build clean
 
 .PHONY: $(NPM_COMMANDS)
 $(NPM_COMMANDS):
