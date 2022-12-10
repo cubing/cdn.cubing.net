@@ -44,6 +44,9 @@ deploy-with-linked-cubing.js: link-cubing.js deploy unlink-cubing.js
 
 .PHONY: serve-locally
 serve-locally: build
+	@echo "-------------------------"
+	@echo "🌐 http://localhost:3336"
+	@echo "-------------------------"
 	caddy run --adapter caddyfile --config script/dev.Caddyfile
 
 # TODO: dev mode with automatic rebuild.
