@@ -29,11 +29,15 @@ done
 
 npx esbuild \
   --bundle \
-  --outdir=${DIST_CDN}/css/@cubing \
-  ./src/css/@cubing/icons.css
+  --outdir=${DIST_CDN}/css/ \
+  --loader:.woff=copy \
+  --loader:.woff2=copy \
+  ./src/css/@cubing/icons.css \
+  ./src/css/@fontsource/ubuntu.css
 
 for f in \
-  ${DIST_CDN}/css/@cubing/icons.css
+  ${DIST_CDN}/css/@cubing/icons.css \
+  ${DIST_CDN}/css/@fontsource/ubuntu.css
 do
   mv "$f" "${f%.css}"
 done

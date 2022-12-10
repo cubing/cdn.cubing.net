@@ -2,6 +2,7 @@
   "main": "index.js",
   "dependencies": {
     "@cubing/icons": "^1.0.6",
+    "@fontsource/ubuntu": "^4.5.11",
     "cubing": "^0.34.6",
     "random-uint-below": "^2.0.0",
     "scramble-display": "^0.5.3",
