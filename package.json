@@ -2,12 +2,13 @@
   "main": "index.js",
   "dependencies": {
     "cubing": "^0.34.6",
+    "random-uint-below": "^2.0.0",
     "scramble-display": "^0.5.3",
     "three": "^0.146.0"
   },
   "scripts": {
     "build": "npm run build-js && cp -R src/static/ dist/",
-    "build-js": "npx esbuild --format=esm --bundle --splitting --sourcemap --minify --target=es2020 --outdir=dist/js --external:crypto --external:worker_threads src/js/*.ts src/js/cubing/*.ts; for f in dist/js/cubing/*.js dist/js/three.js dist/js/scramble-display.js; do mv $f ${f%.js}; done",
+    "build-js": "npx esbuild --format=esm --bundle --splitting --sourcemap --minify --target=es2020 --outdir=dist/js --external:crypto --external:worker_threads src/js/*.ts src/js/cubing/*.ts; for f in dist/js/cubing/*.js dist/js/three.js dist/js/scramble-display.js dist/js/random-uint-below.js; do mv $f ${f%.js}; done",
     "clean": "rm -rf ./dist"
   },
   "devDependencies": {
