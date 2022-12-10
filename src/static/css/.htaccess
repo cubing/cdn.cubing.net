@@ -1,0 +1,5 @@
+Header always set Access-Control-Allow-Origin "*"
+
+<FilesMatch "^[^.]+$">
+  ForceType text/css
+</FilesMatch>

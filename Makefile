@@ -2,7 +2,7 @@
 # https://github.com/lgarron/Makefile-scripts
 
 # Note: the first command becomes the default `make` target.
-NPM_COMMANDS = build clean
+NPM_COMMANDS = build build-js build-css clean
 
 .PHONY: $(NPM_COMMANDS)
 $(NPM_COMMANDS):
@@ -65,7 +65,7 @@ upload:
 	rsync -avz \
 		--exclude .DS_Store \
 		--exclude .git \
-		./dist/ \
+		./dist/cdn.cubing.net/ \
 		${SFTP_PATH}
 	echo "\nDone deploying. Go to ${URL}\n"
 
