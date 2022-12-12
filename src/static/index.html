@@ -56,8 +56,38 @@
         cursor: pointer;
       }
 
+      .boilerplate {
+        opacity: 0.4
+      }
+
     </style>
     <summary title="Press to expand.">Available URLs</summary>
+    <p>
+      The following is a list of all available URLs, ready to be used in browsers. These URLs correspond to
+      <code>npm</code> packages using <code>node</code> module resolution, and can be imported in <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">JavaScript</a>/<a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">CSS</a>
+      files directly. For example, the following will import the same functionality:
+    </p>
+    <fieldset>
+      <code>
+        // NPM
+        <br>
+        import { Alg } from &quot;cubing/alg&quot;;
+      </code>
+    </fieldset>
+    <br>
+    <fieldset>
+      <code>
+       // CDN
+        <br>
+        import { Alg } from &quot;https://cdn.cubing.net/js/cubing/alg&quot;;
+      </code>
+    </fieldset>
+    <p>
+      If you're not certain what this means, we recommend using the examples from <a
+        href="https://js.cubing.net/cubing/">js.cubing.net</a>.
+    </p>
     <ul>
       <li><button title="Copy">📋</button>
         <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/alg</code> <span

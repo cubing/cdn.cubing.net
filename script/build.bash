@@ -41,3 +41,5 @@ for f in \
 do
   mv "$f" "${f%.css}"
 done
+
+# TODO: Update the list of available URLs on the front page.
