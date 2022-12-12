@@ -24,7 +24,8 @@
       display: grid;
       justify-content: center;
       padding: 2em;
-      font-size: 1.1rem; /* adjustment for cdn.cubing.net */
+      font-size: 1.1rem;
+      /* adjustment for cdn.cubing.net */
     }
 
     body {
@@ -56,8 +57,15 @@
         cursor: pointer;
       }
 
+      /* We'd set the opacity, but that also affects text selection. */
       .boilerplate {
-        opacity: 0.4
+        color: #BBB;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .boilerplate {
+          color: #777;
+        }
       }
 
     </style>
@@ -89,88 +97,99 @@
         href="https://js.cubing.net/cubing/">js.cubing.net</a>.
     </p>
     <ul>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/alg</code> <span
-          title="Very useful!">⭐️</span>
+      <li><code>cubing.js modules:</code>
+        <ul>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/alg</code> <span
+              title="Very useful!">⭐️</span>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/bluetooth</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/kpuzzle</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/notation</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/protocol</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/puzzle-geometry</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/puzzles</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/scramble</code> <span
+              title="Very useful!">⭐️</span>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/search</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/stream</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/twisty</code> <span
+              title="Very useful!">⭐️</span>
+          </li>
+        </ul>
       </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/bluetooth</code>
+      <li>Other JS modules:
+        <ul>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>three</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>random-uint-below</code>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/js/</span>scramble-display</code>
+          </li>
+        </ul>
       </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/kpuzzle</code>
+      <li>CSS packages:
+        <ul>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/css/</span>@cubing/icons</code> <span
+              title="Very useful!">⭐️</span>
+          </li>
+          <li><button title="Copy">📋</button>
+            <code><span class="boilerplate">https://cdn.cubing.net/css/</span>@fontsource/ubuntu</code>
+          </li>
+        </ul>
       </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/notation</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/protocol</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/puzzle-geometry</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/puzzles</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/scramble</code> <span
-          title="Very useful!">⭐️</span>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/search</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/stream</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>cubing/twisty</code> <span
-          title="Very useful!">⭐️</span>
-      </li>
-      <br>
-      <li><button title="Copy">📋</button> <code><span class="boilerplate">https://cdn.cubing.net/js/</span>three</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>random-uint-below</code>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/js/</span>scramble-display</code>
-      </li>
-      <br>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/css/</span>@cubing/icons</code> <span
-          title="Very useful!">⭐️</span>
-      </li>
-      <li><button title="Copy">📋</button>
-        <code><span class="boilerplate">https://cdn.cubing.net/css/</span>@fontsource/ubuntu</code>
-      </li>
-      <style>
-        code {
-          user-select: all
-        }
-
-        button[title=Copy] {
-          appearance: none;
-          background: none;
-          border: none;
-        }
-
-        button[title=Copy]:hover {
-          cursor: pointer;
-        }
-
-      </style>
-      <script>
-        for (const button of document.querySelectorAll("button[title=Copy]")) {
-          button.addEventListener("click", () => {
-            const codeElem = button.parentElement.querySelector("code");
-            navigator.clipboard.writeText(codeElem.textContent)
-            codeElem.animate([{ opacity: 0.25 }, { opacity: 1 }], {
-              duration: 250,
-              easing: "ease-out",
-            });
-          })
-        }
-      </script>
     </ul>
+    <style>
+      code {
+        user-select: all
+      }
+
+      button[title=Copy] {
+        appearance: none;
+        background: none;
+        border: none;
+      }
+
+      button[title=Copy]:hover {
+        cursor: pointer;
+      }
+
+    </style>
+    <script>
+      for (const button of document.querySelectorAll("button[title=Copy]")) {
+        button.addEventListener("click", () => {
+          const codeElem = button.parentElement.querySelector("code");
+          navigator.clipboard.writeText(codeElem.textContent)
+          codeElem.animate([{ opacity: 0.25 }, { opacity: 1 }], {
+            duration: 250,
+            easing: "ease-out",
+          });
+        })
+      }
+    </script>
   </details>
 
   <!--
