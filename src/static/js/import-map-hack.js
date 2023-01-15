@@ -23,7 +23,7 @@ script.type = "importmap";
 script.textContent = JSON.stringify(importMap);
 
 console.warn(
-  "Loading the hacky cdn.cubing.net import map. This is experimental, only works in Chrome, and WILL slow down your page. Do not use it for any real apps."
+  "Loading the hacky cdn.cubing.net import map. This is experimental and WILL slow down your page. Do not use it for any real apps.",
 );
 
 document.write(new XMLSerializer().serializeToString(script));
