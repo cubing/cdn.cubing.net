@@ -10,9 +10,12 @@
   },
   "scripts": {
     "build": "./script/build.bash",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "lint": "npx @biomejs/biome check ./src",
+    "format": "npx @biomejs/biome format --write ./src"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.1.0",
     "esbuild": "^0.15.14"
   }
 }
