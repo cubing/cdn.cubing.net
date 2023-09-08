@@ -23,6 +23,7 @@ const result = await build({
   ...commonOptions,
   external: ["node:*"],
   sourceRoot: "./src/js",
+  chunkNames: "chunks/[name]-[hash]",
   outdir: join(DIST_CDN, "js"),
   entryPoints: [
     "./src/js/**/*.ts",
@@ -30,7 +31,7 @@ const result = await build({
       // Hardcode the search worker entry to avoid error messages in Firefox.
       // TODO: Remove this if https://github.com/evanw/esbuild/issues/312 or https://github.com/evanw/esbuild/issues/2866 is ever implemented.
       in: "node_modules/cubing/dist/cubing/search-worker-entry.js",
-      out: "search-worker-entry",
+      out: "chunks/search-worker-entry",
     },
   ],
 });
