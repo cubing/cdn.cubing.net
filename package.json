@@ -1,5 +1,6 @@
 {
   "main": "index.js",
+  "type": "module",
   "dependencies": {
     "@cubing/icons": "^1.0.8",
     "@fontsource/ubuntu": "^4.5.11",
@@ -9,13 +10,14 @@
     "three": "^0.146.0"
   },
   "scripts": {
-    "build": "./script/build.bash",
+    "build": "node ./script/build.js",
     "clean": "rm -rf ./dist",
     "lint": "npx @biomejs/biome check ./src",
     "format": "npx @biomejs/biome format --write ./src"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.1.0",
-    "esbuild": "^0.15.14"
+    "@types/node": "^20.5.9",
+    "esbuild": "^0.19.2"
   }
 }
