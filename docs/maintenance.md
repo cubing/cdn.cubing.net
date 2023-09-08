@@ -13,5 +13,6 @@ This will automatically generate a commit [like this](https://github.com/cubing/
 - the GitHub repo,
 - the deploy server, and
 - the Cloudflare account for `cdn.cubing.net` (if you want the changes to be available immediately).
+  - TODO: Cloudflare configuration is [currently broken](https://github.com/cubing/cdn.cubing.net/issues/6).
 
 For packages other than `cubing`, you'll have to run `npm install [package]@latest` manually.
