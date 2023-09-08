@@ -4,7 +4,7 @@
 
 See examples at [`js.cubing.net`](https://js.cubing.net/)
 
-The available packages are defined [here](./src/js/) in the source code.
+To see the list of packages, click to expand "Available URLs" at: <https://cdn.cubing.net/>
 
 ## Maintenance
 
