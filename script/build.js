@@ -24,7 +24,15 @@ const result = await build({
   external: ["node:*"],
   sourceRoot: "./src/js",
   outdir: join(DIST_CDN, "js"),
-  entryPoints: ["./src/js/**/*.ts"],
+  entryPoints: [
+    "./src/js/**/*.ts",
+    {
+      // Hardcode the search worker entry to avoid error messages in Firefox.
+      // TODO: Remove this if https://github.com/evanw/esbuild/issues/312 or https://github.com/evanw/esbuild/issues/2866 is ever implemented.
+      in: "node_modules/cubing/dist/cubing/search-worker-entry.js",
+      out: "search-worker-entry",
+    },
+  ],
 });
 
 await build({
