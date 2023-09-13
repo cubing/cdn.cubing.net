@@ -30,7 +30,7 @@ const result = await build({
     {
       // Hardcode the search worker entry to avoid error messages in Firefox.
       // TODO: Remove this if https://github.com/evanw/esbuild/issues/312 or https://github.com/evanw/esbuild/issues/2866 is ever implemented.
-      in: "node_modules/cubing/dist/cubing/search-worker-entry.js",
+      in: "node_modules/cubing/dist/lib/cubing/chunks/search-worker-entry.js",
       out: "chunks/search-worker-entry",
     },
   ],
