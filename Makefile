@@ -78,10 +78,10 @@ purge-cache:
 	@echo "To purge the cache once, sudo auth now."
 	@echo "Ctrl-C to cancel"
 	@echo ""
-	@echo "⚠️ WARNING: The Cloudflare configuration for \`cdn.cubing.net\` is currently broken. See: https://github.com/cubing/cdn.cubing.net/issues/6"
+	@echo "⚠️ WARNING: The Cloudflare configuration for \`cdn.cubing.net\` is currently broken. Skipping. See: https://github.com/cubing/cdn.cubing.net/issues/6"
 	@echo ""
-# We have to put this in a separate target so that the shell command doesn't hold up the echo statements:
-	@make purge-cache-curl
+	@# We have to put this in a separate target so that the shell command doesn't hold up the echo statements:
+	@#make purge-cache-curl
 
 .PHONY: purge-cache-curl
 purge-cache-curl:
