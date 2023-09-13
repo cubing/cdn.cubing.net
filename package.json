@@ -4,7 +4,7 @@
   "dependencies": {
     "@cubing/icons": "^1.0.8",
     "@fontsource/ubuntu": "^4.5.11",
-    "cubing": "^0.42.1",
+    "cubing": "^0.43.0",
     "random-uint-below": "^2.0.0",
     "scramble-display": "^0.5.3",
     "three": "^0.146.0"
