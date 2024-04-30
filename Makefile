@@ -57,7 +57,7 @@ serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 roll-cubing-commit:
 	bash script/roll-cubing-commit.bash
 
-SFTP_PATH = "cubing_deploy@towns.dreamhost.com:~/cdn.cubing.net/"
+SFTP_PATH = "cubing_deploy@cdn.cubing.net:~/cdn.cubing.net/"
 URL       = "https://cdn.cubing.net/js/"
 
 .PHONY: upload
