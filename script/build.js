@@ -1,7 +1,7 @@
-import { build, context } from "esbuild";
-import { join } from "node:path";
-import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 import { cp } from "node:fs/promises";
+import { join } from "node:path";
+import { build, context } from "esbuild";
+import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 
 const DIST_CDN = "./dist/cdn.cubing.net";
 
@@ -21,7 +21,7 @@ const result = await build({
   target: "es2020",
   splitting: true,
   ...commonOptions,
-  external: ["node:*"],
+  external: [],
   sourceRoot: "./src/js",
   chunkNames: "chunks/[name]-[hash]",
   outdir: join(DIST_CDN, "js"),
