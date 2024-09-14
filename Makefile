@@ -61,17 +61,9 @@ serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 roll-cubing-commit:
 	bash script/roll-cubing-commit.bash
 
-SFTP_PATH = "cubing_deploy@cdn.cubing.net:~/cdn.cubing.net/"
-URL       = "https://cdn.cubing.net/js/"
-
 .PHONY: upload
 upload:
-	rsync -avz \
-		--exclude .DS_Store \
-		--exclude .git \
-		./dist/cdn.cubing.net/ \
-		${SFTP_PATH}
-	echo "\nDone deploying. Go to ${URL}\n"
+	bun x @cubing/deploy
 
 .PHONY: purge-cache
 purge-cache:
