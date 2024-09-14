@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { build, context } from "esbuild";
 import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 
-const DIST_CDN = "./dist/web/cdn.cubing.net";
+const DIST_CDN = "./dist/web/cdn.fastly.cubing.net";
 
 // We could try to combine the JS and CSS build using options like `chunkNames:
 // "[ext]/[name]-[hash]"`, but this seems to place the `.woff[2]` files one
