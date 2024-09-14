@@ -21,7 +21,7 @@ setup:
 	bun install
 
 .PHONY: deploy
-deploy: clean build upload purge-cache
+deploy: clean build upload purge-cache test-fastly-access
 
 .PHONY: roll-cubing
 roll-cubing:
@@ -66,23 +66,32 @@ upload:
 	bun x @cubing/deploy
 
 .PHONY: purge-cache
-purge-cache:
-	@echo ""
-	@echo "To enable dev mode (Cloudflare cache disabled), use:"
-	@echo "https://dash.cloudflare.com/208031631d4ac31c91e4bd4d0442d15d/cubing.net/caching/configuration"
-	@echo ""
-	@echo "To purge the cache once, sudo auth now."
-	@echo "Ctrl-C to cancel"
-	@echo ""
-	@echo "⚠️ WARNING: The Cloudflare configuration for \`cdn.cubing.net\` is currently broken. Skipping. See: https://github.com/cubing/cdn.cubing.net/issues/6"
-	@echo ""
-	@# We have to put this in a separate target so that the shell command doesn't hold up the echo statements:
-	@#make purge-cache-curl
+purge-cache: purge-cache-curl
 
 .PHONY: purge-cache-curl
 purge-cache-curl:
-	@curl -X POST \
-		"https://api.cloudflare.com/client/v4/zones/7b91bf928f250f49db1f4dcdff946304/purge_cache" \
-		-H "Authorization: Bearer $(shell sudo cat ~/.ssh/secrets/CLOUDFLARE_CUBING_NET_CACHE_TOKEN.txt)" \
-		-H "Content-Type:application/json" \
-		--data '{"purge_everything":true}' # purge cubing.net cache
+	@echo "Purging Fastly cache…"
+	@curl -i -X POST \
+		"https://api.fastly.com/service/UO1y1jdgzMdkTqbTp7oT23/purge_all" \
+		-H "Fastly-Key: $(shell sudo cat ~/.ssh/secrets/FASTLY_CUBING_NET_API_TOKEN.txt)" \
+		-H "Accept: application/json"
+	@echo ""
+
+.PHONY: test-fastly-access
+test-fastly-access:
+	# The world should not have access to normal URLs.
+	https -ph https://cdn.fastly.cubing.net/ | head -n 1 | grep 403
+	https -ph https://cdn.fastly.cubing.net/js/cubing/twisty | head -n 1 | grep 403
+
+	# The world should not have access to the robots.txt (which denies indexing).
+	https -ph https://cdn.fastly.cubing.net/robots.txt | head -n 1 | grep 200
+
+	# The world should have access to `/.well-known` to support Dreamhost's naïve implementation. (404 instead of 200 is expected since the folder has no index; what matters is that it's not a 403).
+	https -ph https://cdn.fastly.cubing.net/.well-known/ | head -n 1 | grep 404
+
+	# Fastly should not have access to robots.txt (so that it doesn't mirror the indexing denial to the public CDN domain).
+	https -ph https://cdn.fastly.cubing.net/robots.txt "Fastly-Client:test" | head -n 1 | grep 404
+
+	# Fastly should have access to normal URLs.
+	https -ph https://cdn.fastly.cubing.net/ "Fastly-Client:test" | head -n 1 | grep 200
+	https -ph https://cdn.fastly.cubing.net/js/cubing/twisty "Fastly-Client:test" | head -n 1 | grep 200

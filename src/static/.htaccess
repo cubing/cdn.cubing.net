@@ -3,4 +3,17 @@ RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
 
-redirectMatch 301 ^/js(/cubing)?/?$ /
+# Deny anyone other than Fastly to any part of the site, with a small number of exceptions.
+RewriteEngine On
+RewriteCond %{HTTP:Fastly-Client} ^$
+RewriteCond %{REQUEST_URI} !^/.well-known/
+RewriteCond %{REQUEST_URI} !^/robots.txt$
+RewriteRule ^ - [F,L] # F: 403 forbidden, L: don't try any other rules
+
+# Don't allow Fastly to see the "deny-all" `/robots.txt` (so that it doesn't get served on `cdn.cubing.net`), but allow the world to see it on `cdn.fastly.cubing.net`.
+RewriteEngine On
+RewriteCond %{HTTP:Fastly-Client} !^$
+RewriteCond %{REQUEST_URI} ^/robots.txt$
+RewriteRule ^ - [R=404]
+
+redirectMatch 301 ^/js(/cubing)?/?$ https://cdn.cubing.net/

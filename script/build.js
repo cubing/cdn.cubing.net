@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { build, context } from "esbuild";
 import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 
-const DIST_CDN = "./dist/web/cdn.fastly.cubing.net";
+const DIST_FOLDER = "./dist/web/cdn.cubing.net";
 
 // We could try to combine the JS and CSS build using options like `chunkNames:
 // "[ext]/[name]-[hash]"`, but this seems to place the `.woff[2]` files one
@@ -24,7 +24,7 @@ const result = await build({
   external: [],
   sourceRoot: "./src/js",
   chunkNames: "chunks/[name]-[hash]",
-  outdir: join(DIST_CDN, "js"),
+  outdir: join(DIST_FOLDER, "js"),
   entryPoints: [
     "./src/js/**/*.ts",
     {
@@ -43,10 +43,10 @@ await build({
     ".woff2": "copy",
   },
   sourceRoot: "./src/css",
-  outdir: join(DIST_CDN, "css"),
+  outdir: join(DIST_FOLDER, "css"),
   entryPoints: ["./src/css/**/*.css"],
 });
 
 console.log("--------");
 console.log("Copying stating files…");
-await cp("./src/static", DIST_CDN, { recursive: true });
+await cp("./src/static", DIST_FOLDER, { recursive: true });
