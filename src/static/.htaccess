@@ -1,6 +1,7 @@
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Note: this value is ignored and overriden by Fastly: https://github.com/cubing/cdn.cubing.net/issues/7#issuecomment-2350929587
 Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
 
 # Deny anyone other than Fastly to any part of the site, with a small number of exceptions.
