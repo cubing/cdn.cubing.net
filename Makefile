@@ -6,7 +6,7 @@ NPM_COMMANDS = build clean lint format
 
 .PHONY: $(NPM_COMMANDS)
 $(NPM_COMMANDS):
-	npm run $@
+	bun run $@
 
 # We write the npm commands to the top of the file above to make shell autocompletion work in more places.
 DYNAMIC_NPM_COMMANDS = $(shell node -e 'console.log(Object.keys(require("./package.json").scripts).join(" "))')
@@ -15,6 +15,10 @@ UPDATE_MAKEFILE_SED_ARGS = "s/^NPM_COMMANDS = .*$$/NPM_COMMANDS = ${DYNAMIC_NPM_
 update-Makefile:
 	if [ "$(shell uname -s)" = "Darwin" ] ; then sed -i "" ${UPDATE_MAKEFILE_SED_ARGS} ; fi
 	if [ "$(shell uname -s)" != "Darwin" ] ; then sed -i"" ${UPDATE_MAKEFILE_SED_ARGS} ; fi
+
+.PHONY: setup
+setup:
+	bun install
 
 .PHONY: deploy
 deploy: clean build upload purge-cache
@@ -33,11 +37,11 @@ roll-cubing:
 .PHONY: link-cubing.js
 link-cubing.js: ../cubing.js
 	cd ../cubing.js && make link
-	npm link cubing
+	bun link cubing
 
 .PHONY: unlink-cubing.js
 unlink-cubing.js:
-	npm install cubing
+	bun install cubing
 
 .PHONY: deploy-with-linked-cubing.js
 deploy-with-linked-cubing.js: link-cubing.js deploy unlink-cubing.js

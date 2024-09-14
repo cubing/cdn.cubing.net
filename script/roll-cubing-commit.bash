@@ -8,9 +8,9 @@ then
   exit 1
 fi
 
-VERSION=$(npm show cubing version)
+VERSION=$(npm show cubing version) # TODO: can `bun` do this?
 echo "Rolling \`cubing\` to version: v${VERSION}"
 
-npm install "cubing@v${VERSION}"
+bun add "cubing@v${VERSION}"
 git stage package*
-git commit -m "\`npm install cubing@v${VERSION}\`"
+git commit -m "\`bun add cubing@v${VERSION}\`"

@@ -11,9 +11,9 @@
   },
   "scripts": {
     "build": "node ./script/build.js",
-    "clean": "rm -rf ./dist",
-    "lint": "npx @biomejs/biome check ./src",
-    "format": "npx @biomejs/biome format --write ./src"
+    "clean": "rm -rf ./dist ./package-lock.json",
+    "lint": "bun x @biomejs/biome check ./src",
+    "format": "bun x @biomejs/biome format --write ./src"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.1.0",
