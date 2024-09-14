@@ -68,9 +68,15 @@ upload:
 .PHONY: purge-cache
 purge-cache: purge-cache-curl
 
-.PHONY: purge-cache-curl
-purge-cache-curl:
+# `make` tries to evaluate the subshell for `purge-cache-curl` before running
+# any commands, so we have run this in a separate target to ensure it prints
+# first.
+.PHONY: purge-cache-curl-notification
+purge-cache-curl-notification:
 	@echo "Purging Fastly cache…"
+
+.PHONY: purge-cache-curl
+purge-cache-curl: purge-cache-curl-notification
 	@curl -i -X POST \
 		"https://api.fastly.com/service/UO1y1jdgzMdkTqbTp7oT23/purge_all" \
 		-H "Fastly-Key: $(shell sudo cat ~/.ssh/secrets/FASTLY_CUBING_NET_API_TOKEN.txt)" \
