@@ -79,7 +79,7 @@ purge-cache-curl-notification:
 purge-cache-curl: purge-cache-curl-notification
 	@curl -i -X POST \
 		"https://api.fastly.com/service/UO1y1jdgzMdkTqbTp7oT23/purge_all" \
-		-H "Fastly-Key: $(shell sudo cat ~/.ssh/secrets/FASTLY_CUBING_NET_API_TOKEN.txt)" \
+		-H "Fastly-Key: $(shell cat ~/.ssh/secrets/FASTLY_CUBING_NET_API_TOKEN.txt)" \
 		-H "Accept: application/json"
 	@echo ""
 
