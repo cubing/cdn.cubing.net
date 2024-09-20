@@ -1,2 +1,3 @@
+# This file should only be served on `cdn.fastly.cubing.net` and not on `cdn.cubing.net`.
 User-agent: *
 Disallow: /
