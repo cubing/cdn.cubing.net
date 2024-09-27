@@ -2,20 +2,20 @@
 
 const importMap = {
   imports: {
-    "cubing/alg": "https://cdn.cubing.net/js/cubing/alg",
-    "cubing/bluetooth": "https://cdn.cubing.net/js/cubing/bluetooth",
-    "cubing/kpuzzle": "https://cdn.cubing.net/js/cubing/kpuzzle",
-    "cubing/notation": "https://cdn.cubing.net/js/cubing/notation",
-    "cubing/protocol": "https://cdn.cubing.net/js/cubing/protocol",
+    "cubing/alg": "https://cdn.cubing.net/v0/js/cubing/alg",
+    "cubing/bluetooth": "https://cdn.cubing.net/v0/js/cubing/bluetooth",
+    "cubing/kpuzzle": "https://cdn.cubing.net/v0/js/cubing/kpuzzle",
+    "cubing/notation": "https://cdn.cubing.net/v0/js/cubing/notation",
+    "cubing/protocol": "https://cdn.cubing.net/v0/js/cubing/protocol",
     "cubing/puzzle-geometry":
-      "https://cdn.cubing.net/js/cubing/puzzle-geometry",
-    "cubing/puzzles": "https://cdn.cubing.net/js/cubing/puzzles",
-    "cubing/scramble": "https://cdn.cubing.net/js/cubing/scramble",
-    "cubing/search": "https://cdn.cubing.net/js/cubing/search",
-    "cubing/stream": "https://cdn.cubing.net/js/cubing/stream",
-    "cubing/twisty": "https://cdn.cubing.net/js/cubing/twisty",
-    "scramble-display": "https://cdn.cubing.net/js/scramble-display",
-    three: "https://cdn.cubing.net/js/three",
+      "https://cdn.cubing.net/v0/js/cubing/puzzle-geometry",
+    "cubing/puzzles": "https://cdn.cubing.net/v0/js/cubing/puzzles",
+    "cubing/scramble": "https://cdn.cubing.net/v0/js/cubing/scramble",
+    "cubing/search": "https://cdn.cubing.net/v0/js/cubing/search",
+    "cubing/stream": "https://cdn.cubing.net/v0/js/cubing/stream",
+    "cubing/twisty": "https://cdn.cubing.net/v0/js/cubing/twisty",
+    "scramble-display": "https://cdn.cubing.net/v0/js/scramble-display",
+    three: "https://cdn.cubing.net/v0/js/three",
   },
 };
 const script = document.createElement("script");
