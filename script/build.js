@@ -4,6 +4,7 @@ import { build, context } from "esbuild";
 import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 
 const DIST_FOLDER = "./dist/web/cdn.cubing.net";
+const DIST_FOLDER_V0 = join(DIST_FOLDER, "v0");
 
 // We could try to combine the JS and CSS build using options like `chunkNames:
 // "[ext]/[name]-[hash]"`, but this seems to place the `.woff[2]` files one
@@ -22,10 +23,10 @@ const result = await build({
   splitting: true,
   ...commonOptions,
   external: [],
-  sourceRoot: "./src/js",
-  chunkNames: "chunks/[name]-[hash]",
-  outdir: join(DIST_FOLDER, "js"),
-  entryPoints: ["./src/js/**/*.ts"],
+  sourceRoot: "./src/compiled/",
+  chunkNames: "v0/js/chunks/[name]-[hash]",
+  outdir: DIST_FOLDER,
+  entryPoints: ["./src/compiled/**/*.ts"],
 });
 
 await build({
@@ -34,9 +35,9 @@ await build({
     ".woff": "copy",
     ".woff2": "copy",
   },
-  sourceRoot: "./src/css",
-  outdir: join(DIST_FOLDER, "css"),
-  entryPoints: ["./src/css/**/*.css"],
+  sourceRoot: "./src/compiled/v0/css",
+  outdir: join(DIST_FOLDER_V0, "css"),
+  entryPoints: ["./src/compiled/v0/css/**/*.css"],
 });
 
 console.log("--------");

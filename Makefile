@@ -100,4 +100,4 @@ test-fastly-access:
 
 	# Fastly should have access to normal URLs.
 	https -ph https://cdn.fastly.cubing.net/ "Fastly-Client:test" | head -n 1 | grep 200
-	https -ph https://cdn.fastly.cubing.net/js/cubing/twisty "Fastly-Client:test" | head -n 1 | grep 200
+	https -ph https://cdn.fastly.cubing.net/v0/js/cubing/twisty "Fastly-Client:test" | head -n 1 | grep 200

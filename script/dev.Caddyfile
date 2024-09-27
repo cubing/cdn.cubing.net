@@ -4,7 +4,7 @@ http://localhost:3336 {
 		browse
 	}
 	header Access-Control-Allow-Origin "*"
-	route /js/* {
+	route /v0/js/* {
 		header Content-Type "application/javascript"
 	}
 }

@@ -17,4 +17,5 @@ RewriteCond %{HTTP:Fastly-Client} !^$
 RewriteCond %{REQUEST_URI} ^/robots.txt$
 RewriteRule ^ - [R=404]
 
-redirectMatch 301 ^/js(/cubing)?/?$ https://cdn.cubing.net/
+RedirectMatch 308 ^/js(/cubing)?/?$ https://cdn.cubing.net/
+RedirectMatch 308 ^/v0(/js(/cubing)?)?/?$ https://cdn.cubing.net/
