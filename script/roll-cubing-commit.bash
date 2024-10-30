@@ -12,5 +12,6 @@ VERSION=$(npm show cubing version) # TODO: can `bun` do this?
 echo "Rolling \`cubing\` to version: v${VERSION}"
 
 bun add "cubing@v${VERSION}"
-git stage package*
+git stage package.json
+git stage bun.lockb
 git commit -m "\`bun add cubing@v${VERSION}\`"
