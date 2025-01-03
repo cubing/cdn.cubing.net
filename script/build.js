@@ -32,6 +32,7 @@ const result = await build({
 await build({
   ...commonOptions,
   loader: {
+    ".ttf": "copy",
     ".woff": "copy",
     ".woff2": "copy",
   },
