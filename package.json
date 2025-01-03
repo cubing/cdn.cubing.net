@@ -2,7 +2,7 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
-    "@cubing/icons": "^1.1.0",
+    "@cubing/icons": "v2.1.0-pre.1",
     "@fontsource/ubuntu": "^4.5.11",
     "cubing": "v0.53.8",
     "random-uint-below": "^3.3.0",
