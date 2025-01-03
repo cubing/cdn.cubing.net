@@ -3,3 +3,5 @@ Header always set Access-Control-Allow-Origin "*"
 <FilesMatch "^[^.]+$">
   ForceType text/css
 </FilesMatch>
+
+RedirectMatch 308 ^/v0/css/@cubing/icons$ https://cdn.cubing.net/v0/css/@cubing/icons/css
