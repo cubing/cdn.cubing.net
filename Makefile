@@ -83,21 +83,10 @@ purge-cache-curl: purge-cache-curl-notification
 		-H "Accept: application/json"
 	@echo ""
 
-.PHONY: test-fastly-access
-test-fastly-access:
-	# The world should not have access to normal URLs.
-	https -ph https://cdn.fastly.cubing.net/ | head -n 1 | grep 403
-	https -ph https://cdn.fastly.cubing.net/js/cubing/twisty | head -n 1 | grep 403
+.PHONY: healthcheck-fastly-subdomain
+healthcheck-fastly-subdomain:
+	bun run ./script/healthcheck/fastly-subdomain.ts
 
-	# The world should not have access to the robots.txt (which denies indexing).
-	https -ph https://cdn.fastly.cubing.net/robots.txt | head -n 1 | grep 200
-
-	# The world should have access to `/.well-known` to support Dreamhost's naïve implementation. (404 instead of 200 is expected since the folder has no index; what matters is that it's not a 403).
-	https -ph https://cdn.fastly.cubing.net/.well-known/ | head -n 1 | grep 404
-
-	# Fastly should not have access to robots.txt (so that it doesn't mirror the indexing denial to the public CDN domain).
-	https -ph https://cdn.fastly.cubing.net/robots.txt "Fastly-Client:test" | head -n 1 | grep 404
-
-	# Fastly should have access to normal URLs.
-	https -ph https://cdn.fastly.cubing.net/ "Fastly-Client:test" | head -n 1 | grep 200
-	https -ph https://cdn.fastly.cubing.net/v0/js/cubing/twisty "Fastly-Client:test" | head -n 1 | grep 200
+.PHONY: healthcheck-cdn
+healthcheck-cdn:
+	bun run ./script/healthcheck/cdn.ts

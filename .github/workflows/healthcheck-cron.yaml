@@ -1,0 +1,15 @@
+name: Healthcheck cron
+
+on:
+  schedule:
+    - cron: "50 12 * * *"
+
+jobs:
+  healthcheck-cron:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: make healthcheck-fastly-subdomain
+      - run: make healthcheck-cdn
