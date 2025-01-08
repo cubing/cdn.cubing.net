@@ -90,3 +90,7 @@ healthcheck-fastly-subdomain:
 .PHONY: healthcheck-cdn
 healthcheck-cdn:
 	bun run ./script/healthcheck/cdn.ts
+
+.PHONY: healthcheck-success-ping
+healthcheck-success-ping:
+	bun run ./script/healthcheck/success-ping.ts

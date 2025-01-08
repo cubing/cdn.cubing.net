@@ -3,6 +3,8 @@ name: Healthcheck cron
 on:
   schedule:
     - cron: "15 8,20 * * *"
+  # Also allow manual triggering.
+  workflow_dispatch:
 
 jobs:
   healthcheck-cron:
@@ -13,3 +15,8 @@ jobs:
       - uses: oven-sh/setup-bun@v1
       - run: make healthcheck-fastly-subdomain
       - run: make healthcheck-cdn
+      # TODO: turn this into a reusable workflow: https://github.com/cubing/actions-workflows/issues/2
+      - name: make healthcheck-success-ping
+        env:
+          HEALTHCHECK_SUCCESS_PING_URL: ${{ secrets.HEALTHCHECK_SUCCESS_PING_URL }}
+        run: make healthcheck-success-ping
