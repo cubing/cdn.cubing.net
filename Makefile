@@ -21,7 +21,7 @@ setup:
 	bun install
 
 .PHONY: deploy
-deploy: clean build upload purge-cache test-fastly-access
+deploy: clean build upload purge-cache post-deploy
 
 .PHONY: roll-cubing
 roll-cubing:
@@ -94,3 +94,6 @@ healthcheck-cdn:
 .PHONY: healthcheck-success-ping
 healthcheck-success-ping:
 	bun run ./script/healthcheck/success-ping.ts
+
+.PHONY: post-deploy
+post-deploy: healthcheck-fastly-subdomain healthcheck-cdn
