@@ -1,27 +1,29 @@
-# This Makefile is a wrapper around the scripts from `package.json`.
-# https://github.com/lgarron/Makefile-scripts
+.PHONY: build
+build: setup
+	bun run ./script/build.ts
 
-# Note: the first command becomes the default `make` target.
-NPM_COMMANDS = build clean lint format
+.PHONY: lint
+lint: setup
+	bun x @biomejs/biome check ./src
 
-.PHONY: $(NPM_COMMANDS)
-$(NPM_COMMANDS):
-	bun run $@
-
-# We write the npm commands to the top of the file above to make shell autocompletion work in more places.
-DYNAMIC_NPM_COMMANDS = $(shell node -e 'console.log(Object.keys(require("./package.json").scripts).join(" "))')
-UPDATE_MAKEFILE_SED_ARGS = "s/^NPM_COMMANDS = .*$$/NPM_COMMANDS = ${DYNAMIC_NPM_COMMANDS}/" Makefile
-.PHONY: update-Makefile
-update-Makefile:
-	if [ "$(shell uname -s)" = "Darwin" ] ; then sed -i "" ${UPDATE_MAKEFILE_SED_ARGS} ; fi
-	if [ "$(shell uname -s)" != "Darwin" ] ; then sed -i"" ${UPDATE_MAKEFILE_SED_ARGS} ; fi
+.PHONY: format
+format: setup
+	bun x @biomejs/biome format --write ./src
 
 .PHONY: setup
 setup:
-	bun install
+	bun install --no-save
 
 .PHONY: deploy
 deploy: clean build upload purge-cache post-deploy
+
+.PHONY: clean
+clean:
+	rm -rf ./dist ./package-lock.json
+
+.PHONY: reset
+reset: clean
+	rm -rf ./node_modules
 
 .PHONY: roll-cubing
 roll-cubing:
@@ -29,6 +31,10 @@ roll-cubing:
 	make roll-cubing-commit
 	git push
 	make deploy
+
+.PHONY: roll-cubing-commit
+roll-cubing-commit:
+	bash script/roll-cubing-commit.bash
 
 # NOT `.PHONY`!
 ../cubing.js:
@@ -57,10 +63,6 @@ serve-locally: build
 .PHONY: serve-locally-with-linked-cubing.js
 serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 
-.PHONY: roll-cubing-commit
-roll-cubing-commit:
-	bash script/roll-cubing-commit.bash
-
 .PHONY: upload
 upload:
 	bun x @cubing/deploy
@@ -84,16 +86,16 @@ purge-cache-curl: purge-cache-curl-notification
 	@echo ""
 
 .PHONY: healthcheck-fastly-subdomain
-healthcheck-fastly-subdomain:
+healthcheck-fastly-subdomain: setup
 	bun run ./script/healthcheck/fastly-subdomain.ts
 
 .PHONY: healthcheck-cdn
-healthcheck-cdn:
+healthcheck-cdn: setup
 	bun run ./script/healthcheck/cdn.ts
 
 .PHONY: healthcheck-success-ping
-healthcheck-success-ping:
+healthcheck-success-ping: setup
 	bun run ./script/healthcheck/success-ping.ts
 
 .PHONY: post-deploy
-post-deploy: healthcheck-fastly-subdomain healthcheck-cdn
+post-deploy: setup healthcheck-fastly-subdomain healthcheck-cdn

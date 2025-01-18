@@ -1,5 +1,6 @@
 import { join, parse } from "node:path";
-import { rename } from "fs/promises";
+import { rename } from "node:fs/promises";
+import { Metafile } from "esbuild";
 
 const ENTRY_POINTS_COMMON_PREFIX = "src/";
 
@@ -14,7 +15,7 @@ const ENTRY_POINTS_COMMON_PREFIX = "src/";
 export const removeEntryFileOutputFileExtensionsPlugin = {
   name: "remove-entry-file-output-file-extensions",
   setup(build) {
-    build.onEnd(async (result) => {
+    build.onEnd(async (result: {metafile: Metafile}) => {
       // TODO: Why is `result.outputFiles` not always present/iterable?
 
       console.log("--------");
@@ -24,7 +25,7 @@ export const removeEntryFileOutputFileExtensionsPlugin = {
         // TODO: This is a total hack, because:
         // - I can't find an obvious way to tell which `esbuild` outputs come from the `entryPoints` option.
         // - `node:path` doesn't have a sensible way to check whether a path is contained in a folder.
-        const movePromises = [];
+        const movePromises: Promise<void>[] = [];
         if (info.entryPoint?.startsWith(ENTRY_POINTS_COMMON_PREFIX)) {
           const { dir, name } = parse(outputFileName);
           const newOutputFileName = join(dir, name);
