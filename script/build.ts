@@ -1,13 +1,14 @@
-import { cp } from "node:fs/promises";
+import { cp, rm } from "node:fs/promises";
 import { join } from "node:path";
-import { build, context } from "esbuild";
+import { build } from "esbuild";
 import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutputFileExtensionsPlugin.js";
 
 const DIST_FOLDER = "./dist/web/cdn.cubing.net";
 const DIST_FOLDER_V0 = join(DIST_FOLDER, "v0");
 
 console.log("--------");
-console.log("Copying static files…");
+console.log("Copying static files into a fresh distribution folder…");
+await rm(DIST_FOLDER, {recursive: true, force: true});
 await cp("./src/static", DIST_FOLDER, { recursive: true, errorOnExist: false });
 
 // We could try to combine the JS and CSS build using options like `chunkNames:
