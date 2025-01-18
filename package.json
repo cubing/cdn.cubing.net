@@ -10,10 +10,7 @@
     "three": "^0.146.0"
   },
   "scripts": {
-    "build": "bun run ./script/build.js",
-    "clean": "rm -rf ./dist ./package-lock.json",
-    "lint": "bun x @biomejs/biome check ./src",
-    "format": "bun x @biomejs/biome format --write ./src"
+    "build": "make build"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.1.0",
