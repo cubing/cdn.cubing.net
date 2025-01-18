@@ -6,6 +6,10 @@ import { removeEntryFileOutputFileExtensionsPlugin } from "./removeEntryFileOutp
 const DIST_FOLDER = "./dist/web/cdn.cubing.net";
 const DIST_FOLDER_V0 = join(DIST_FOLDER, "v0");
 
+console.log("--------");
+console.log("Copying static files…");
+await cp("./src/static", DIST_FOLDER, { recursive: true, errorOnExist: false });
+
 // We could try to combine the JS and CSS build using options like `chunkNames:
 // "[ext]/[name]-[hash]"`, but this seems to place the `.woff[2]` files one
 // folder too high. So we keep the builds separate for now, and just share common options.
@@ -17,7 +21,7 @@ const commonOptions = {
   plugins: [removeEntryFileOutputFileExtensionsPlugin],
 };
 
-const result = await build({
+await build({
   format: "esm",
   target: "es2020",
   splitting: true,
@@ -40,7 +44,4 @@ await build({
   entryPoints: ["./src/compiled/v0/css/**/*.css"],
 });
 
-console.log("--------");
-console.log("Copying static files…");
-await cp("./src/static", DIST_FOLDER, { recursive: true, errorOnExist: false });
 console.log("Done building.")
