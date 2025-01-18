@@ -43,3 +43,4 @@ await build({
 console.log("--------");
 console.log("Copying static files…");
 await cp("./src/static", DIST_FOLDER, { recursive: true });
+console.log("Done building.")
