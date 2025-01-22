@@ -28,13 +28,24 @@ reset: clean
 .PHONY: roll-cubing
 roll-cubing:
 	git pull
-	make roll-cubing-commit
+	./script/bump-package-commit.ts cubing
+	git push
+	make deploy
+
+.PHONY: roll-@cubing/icons
+roll-@cubing/icons:
+	git pull
+	./script/bump-package-commit.ts @cubing/icons
 	git push
 	make deploy
 
 .PHONY: roll-cubing-commit
 roll-cubing-commit:
 	bash script/roll-cubing-commit.bash
+
+.PHONY: roll-icons-commit
+roll-icons-commit:
+	bash script/roll-icons-commit.bash
 
 # NOT `.PHONY`!
 ../cubing.js:
