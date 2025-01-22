@@ -13,7 +13,7 @@
     "build": "make build"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.1.0",
+    "@biomejs/biome": "^1.9.4",
     "@cubing/deploy": "^0.1.4",
     "@types/bun": "^1.1.17",
     "esbuild": "^0.19.2"
