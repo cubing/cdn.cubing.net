@@ -12,5 +12,3 @@ if (!url) {
 }
 
 await fetch(url);
-
-export {};

@@ -4,11 +4,11 @@ build: setup
 
 .PHONY: lint
 lint: setup
-	bun x @biomejs/biome check ./src
+	bun x @biomejs/biome check
 
 .PHONY: format
 format: setup
-	bun x @biomejs/biome format --write ./src
+	bun x @biomejs/biome format --write
 
 .PHONY: setup
 setup:

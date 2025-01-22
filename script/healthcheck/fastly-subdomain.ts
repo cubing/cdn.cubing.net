@@ -18,5 +18,3 @@ const promises = [
 ];
 await Promise.allSettled(promises);
 await Promise.all(promises);
-
-export {};

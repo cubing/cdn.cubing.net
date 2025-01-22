@@ -1,6 +1,6 @@
-import { join, parse } from "node:path";
 import { rename } from "node:fs/promises";
-import { Metafile } from "esbuild";
+import { join, parse } from "node:path";
+import type { Metafile } from "esbuild";
 
 const ENTRY_POINTS_COMMON_PREFIX = "src/";
 
@@ -15,7 +15,7 @@ const ENTRY_POINTS_COMMON_PREFIX = "src/";
 export const removeEntryFileOutputFileExtensionsPlugin = {
   name: "remove-entry-file-output-file-extensions",
   setup(build) {
-    build.onEnd(async (result: {metafile: Metafile}) => {
+    build.onEnd(async (result: { metafile: Metafile }) => {
       // TODO: Why is `result.outputFiles` not always present/iterable?
 
       console.log("--------");
