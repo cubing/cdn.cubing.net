@@ -17,7 +17,7 @@
     "@cubing/deploy": "^0.1.4",
     "@types/bun": "^1.1.17",
     "cmd-ts-too": "^0.15.3",
-    "esbuild": "^0.19.2"
+    "esbuild": "^0.25.0"
   },
   "@cubing/deploy": {
     "https://cdn.fastly.cubing.net/": {
