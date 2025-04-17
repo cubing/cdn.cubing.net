@@ -12,7 +12,7 @@ format: setup
 
 .PHONY: setup
 setup:
-	bun install --no-save
+	bun install --frozen-lockfile
 
 .PHONY: deploy
 deploy: clean build upload purge-cache post-deploy
