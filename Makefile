@@ -75,7 +75,7 @@ serve-locally: build
 serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 
 .PHONY: upload
-upload:
+upload: clean build
 	bun x @cubing/deploy
 
 .PHONY: purge-cache
