@@ -7,7 +7,7 @@
         "@fontsource/ubuntu": "^4.5.11",
         "cubing": "v0.56.0",
         "random-uint-below": "^3.3.0",
-        "scramble-display": "^0.5.3",
+        "scramble-display": "v0.6.2",
         "three": "^0.146.0",
       },
       "devDependencies": {
@@ -138,7 +138,7 @@
 
     "random-uint-below": ["random-uint-below@3.3.0", "", {}, "sha512-5x3lft1bn5gev9qA9iVFcmd0+t10j3eDl/QKB56T/3v/bdrM7WsfO2D0rb1JYcQdkcV0/Bs5iydgQmkTE6rczA=="],
 
-    "scramble-display": ["scramble-display@0.5.5", "", { "dependencies": { "cubing": "^0.42.0" } }, "sha512-kZUHue3v1DV5SMIg5PpWhJKu3JqVxuwBfIrxBfDSMQDGFzGtzzu4A2tyG98sNsr9otdklEMxHbNjFF18zlYhaQ=="],
+    "scramble-display": ["scramble-display@0.6.2", "", { "dependencies": { "cubing": "v0.55.0" } }, "sha512-48HFx8lmiQfjiKKv4TvqzWgy1beDCV5aAz+9fRLd6VbCZ9OvOmSAH3snUYVNH+hWWIsEoZ6OMnOJZ0tTH/PJ0g=="],
 
     "strip-ansi": ["strip-ansi@7.1.0", "", { "dependencies": { "ansi-regex": "^6.0.1" } }, "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ=="],
 
@@ -150,14 +150,8 @@
 
     "cubing/three": ["three@0.170.0", "", {}, "sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ=="],
 
-    "scramble-display/cubing": ["cubing@0.42.1", "", { "dependencies": { "@types/three": "^0.149.0", "@types/web-bluetooth": "^0.0.16", "comlink": "^4.4.1", "random-uint-below": "^2.0.0", "three": "^0.150.1" } }, "sha512-WEh8c+hpMOvvXwtC7Ox5tdlxKZo1uqYWQFbJugZCrd9pze3HjyWjRTryC2FhC8HuXbJZo0DEosCBiWpEfkloPA=="],
+    "scramble-display/cubing": ["cubing@0.55.0", "", { "dependencies": { "@types/three": "^0.169.0", "@types/web-bluetooth": "^0.0.20", "cmd-ts-too": "^0.15.3", "comlink": "^4.4.1", "random-uint-below": "v3.3.0", "three": "^0.170.0" }, "bin": { "scramble": "dist/bin/scramble.js" } }, "sha512-1bUKQPiNijUf5tHXfZcWwy7Km/z2SUFKbM6fA35149+SLJxVWSyXlhdZpsaekponG7qAPMQ1wGHD0w/Xq0tDPw=="],
 
-    "scramble-display/cubing/@types/three": ["@types/three@0.149.0", "", { "dependencies": { "@types/webxr": "*" } }, "sha512-fgNBm9LWc65ER/W0cvoXdC0iMy7Ke9e2CONmEr6Jt8sDSY3sw4DgOubZfmdZ747dkPhbQrgRQAWwDEr2S/7IEg=="],
-
-    "scramble-display/cubing/@types/web-bluetooth": ["@types/web-bluetooth@0.0.16", "", {}, "sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ=="],
-
-    "scramble-display/cubing/random-uint-below": ["random-uint-below@2.0.0", "", {}, "sha512-2gD9r+3IkNJ6JGfra+T2tA4SGf3ne5pz2QGuXQ9fXdxAX38i0OEsqJ19smnEsYnjhYi0H0ICo8D4pfqw3Pszhw=="],
-
-    "scramble-display/cubing/three": ["three@0.150.1", "", {}, "sha512-5C1MqKUWaHYo13BX0Q64qcdwImgnnjSOFgBscOzAo8MYCzEtqfQqorEKMcajnA3FHy1yVlIe9AmaMQ0OQracNA=="],
+    "scramble-display/cubing/three": ["three@0.170.0", "", {}, "sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ=="],
   }
 }
