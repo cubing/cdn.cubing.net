@@ -1,6 +1,7 @@
+import assert from "node:assert";
 import { rename } from "node:fs/promises";
 import { join, parse } from "node:path";
-import type { Metafile } from "esbuild";
+import type { Metafile, PluginBuild } from "esbuild";
 
 const ENTRY_POINTS_COMMON_PREFIX = "src/";
 
@@ -14,8 +15,9 @@ const ENTRY_POINTS_COMMON_PREFIX = "src/";
 // `./dist/web/cdn.cubing.net/v0/js/cubing/alg`
 export const removeEntryFileOutputFileExtensionsPlugin = {
   name: "remove-entry-file-output-file-extensions",
-  setup(build) {
-    build.onEnd(async (result: { metafile: Metafile }) => {
+  setup(build: PluginBuild) {
+    build.onEnd(async (result: { metafile?: Metafile }) => {
+      assert(result.metafile);
       // TODO: Why is `result.outputFiles` not always present/iterable?
 
       console.log("--------");
