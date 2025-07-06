@@ -31,7 +31,7 @@ const app = command({
     console.log(`Rolling \`${npmPackage}\` to version: v${version}`);
 
     await $`bun add "${npmPackage}@v${version}`;
-    await $`git stage package.json bun.lockb`;
+    await $`git stage package.json bun.lock`;
     await $`git commit -m "\`bun add "${npmPackage}@v${version}\`"`;
   },
 });
