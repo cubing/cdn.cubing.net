@@ -6,7 +6,7 @@
     "@fontsource/ubuntu": "^5.2.5",
     "cubing": "v0.57.1",
     "random-uint-below": "^3.3.0",
-    "scramble-display": "v0.6.5",
+    "scramble-display": "^v0.6.6",
     "three": "^0.176.0"
   },
   "scripts": {
