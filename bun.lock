@@ -7,7 +7,7 @@
         "@fontsource/ubuntu": "^5.2.5",
         "cubing": "^0.58.0",
         "random-uint-below": "^3.3.0",
-        "scramble-display": "^0.58.0",
+        "scramble-display": "^0.58.1",
         "three": "^0.176.0",
       },
       "devDependencies": {
@@ -142,7 +142,7 @@
 
     "random-uint-below": ["random-uint-below@3.3.0", "", {}, "sha512-5x3lft1bn5gev9qA9iVFcmd0+t10j3eDl/QKB56T/3v/bdrM7WsfO2D0rb1JYcQdkcV0/Bs5iydgQmkTE6rczA=="],
 
-    "scramble-display": ["scramble-display@0.58.0", "", { "dependencies": { "cubing": "^0.58.0" } }, "sha512-mFvaK8BhyO+rkNuZZEQAyu5QSADKdU23zkEzmc9vtcDSlrKRHRFpfgr00EMl0pNGeeN04J7m7oxXvXnXBkahSw=="],
+    "scramble-display": ["scramble-display@0.58.1", "", { "dependencies": { "cubing": "^0.58.1" } }, "sha512-ciG8/LRVaR+k/xGbuxOt2pqrSC52pSoTpBdYSyZnClL40LwKvybflEqYn2OEM9VdoEkTwAH7K+Olppt68eNaQA=="],
 
     "strip-ansi": ["strip-ansi@7.1.0", "", { "dependencies": { "ansi-regex": "^6.0.1" } }, "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ=="],
 
@@ -157,6 +157,8 @@
     "@cubing/dev-config/esbuild": ["esbuild@0.25.3", "", { "optionalDependencies": { "@esbuild/aix-ppc64": "0.25.3", "@esbuild/android-arm": "0.25.3", "@esbuild/android-arm64": "0.25.3", "@esbuild/android-x64": "0.25.3", "@esbuild/darwin-arm64": "0.25.3", "@esbuild/darwin-x64": "0.25.3", "@esbuild/freebsd-arm64": "0.25.3", "@esbuild/freebsd-x64": "0.25.3", "@esbuild/linux-arm": "0.25.3", "@esbuild/linux-arm64": "0.25.3", "@esbuild/linux-ia32": "0.25.3", "@esbuild/linux-loong64": "0.25.3", "@esbuild/linux-mips64el": "0.25.3", "@esbuild/linux-ppc64": "0.25.3", "@esbuild/linux-riscv64": "0.25.3", "@esbuild/linux-s390x": "0.25.3", "@esbuild/linux-x64": "0.25.3", "@esbuild/netbsd-arm64": "0.25.3", "@esbuild/netbsd-x64": "0.25.3", "@esbuild/openbsd-arm64": "0.25.3", "@esbuild/openbsd-x64": "0.25.3", "@esbuild/sunos-x64": "0.25.3", "@esbuild/win32-arm64": "0.25.3", "@esbuild/win32-ia32": "0.25.3", "@esbuild/win32-x64": "0.25.3" }, "bin": { "esbuild": "bin/esbuild" } }, "sha512-qKA6Pvai73+M2FtftpNKRxJ78GIjmFXFxd/1DVBqGo/qNhLSfv+G12n9pNoWdytJC8U00TrViOwpjT0zgqQS8Q=="],
 
     "cubing/three": ["three@0.170.0", "", {}, "sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ=="],
+
+    "scramble-display/cubing": ["cubing@0.58.1", "", { "dependencies": { "@types/three": "^0.169.0", "@types/web-bluetooth": "^0.0.20", "cmd-ts-too": "^0.15.3", "comlink": "^4.4.1", "random-uint-below": "v3.3.0", "three": "^0.170.0" }, "bin": { "scramble": "dist/bin/scramble.js" } }, "sha512-PNU+27eI61cWpe6uDOnhhKXD6R/MgDb8Mjk09tAPNBD78ckC2e4KKRVU30oM+0irifS71r2KSdgxCxod22ulog=="],
 
     "@cubing/deploy/printable-shell-command/@types/bun": ["@types/bun@1.2.12", "", { "dependencies": { "bun-types": "1.2.12" } }, "sha512-lY/GQTXDGsolT/TiH72p1tuyUORuRrdV7VwOTOjDOt8uTBJQOJc5zz3ufwwDl0VBaoxotSk4LdP0hhjLJ6ypIQ=="],
 
@@ -209,6 +211,8 @@
     "@cubing/dev-config/esbuild/@esbuild/win32-ia32": ["@esbuild/win32-ia32@0.25.3", "", { "os": "win32", "cpu": "ia32" }, "sha512-qspTZOIGoXVS4DpNqUYUs9UxVb04khS1Degaw/MnfMe7goQ3lTfQ13Vw4qY/Nj0979BGvMRpAYbs/BAxEvU8ew=="],
 
     "@cubing/dev-config/esbuild/@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.3", "", { "os": "win32", "cpu": "x64" }, "sha512-ICgUR+kPimx0vvRzf+N/7L7tVSQeE3BYY+NhHRHXS1kBuPO7z2+7ea2HbhDyZdTephgvNvKrlDDKUexuCVBVvg=="],
+
+    "scramble-display/cubing/three": ["three@0.170.0", "", {}, "sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ=="],
 
     "@cubing/deploy/printable-shell-command/@types/bun/bun-types": ["bun-types@1.2.12", "", { "dependencies": { "@types/node": "*" } }, "sha512-tvWMx5vPqbRXgE8WUZI94iS1xAYs8bkqESR9cxBB1Wi+urvfTrF1uzuDgBHFAdO0+d2lmsbG3HmeKMvUyj6pWA=="],
   }
