@@ -28,6 +28,16 @@ const app = command({
     }
 
     const version = (await $`npm show ${npmPackage} version`.text()).trim();
+
+    const currentDependencyVersion: string = (
+      await $`npm ls cubing --json`.json()
+    ).dependencies.cubing.version;
+    if (currentDependencyVersion === version) {
+      console.log(`Current version matches latest from \`npm\`: ${version}`);
+      console.log("Exiting (without error).");
+      exit(0);
+    }
+
     console.log(`Rolling \`${npmPackage}\` to version: v${version}`);
 
     await $`bun add "${npmPackage}@v${version}`;
