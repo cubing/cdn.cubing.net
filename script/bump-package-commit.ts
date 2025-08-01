@@ -29,6 +29,7 @@ const app = command({
 
     const version = (await $`npm show ${npmPackage} version`.text()).trim();
 
+    // TODO: https://github.com/oven-sh/bun/discussions/10181
     const currentDependencyVersion: string = (
       await $`npm ls cubing --json`.json()
     ).dependencies.cubing.version;
