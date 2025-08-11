@@ -3,7 +3,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@cubing/icons": "v3.0.4",
+        "@cubing/icons": "v3.0.5",
         "@fontsource/ubuntu": "^5.2.5",
         "cubing": "v0.58.1",
         "random-uint-below": "^3.3.0",
@@ -44,7 +44,7 @@
 
     "@cubing/dev-config": ["@cubing/dev-config@0.3.5", "", { "dependencies": { "esbuild": "^0.25.3" } }, "sha512-qxtQ4M2bFFj/iVKhYRWnRp90be+hjYcLeFwvxFlS4EsoPdslF+3sN2DiC1j11qwOkOCFvoaHJL4QmrriQDPkjA=="],
 
-    "@cubing/icons": ["@cubing/icons@3.0.4", "", {}, "sha512-YgezYPOxxbtUbCXCTvGkFErb2gIqYC3XqYuaYMAMgveo1W5wvGpnxHgx5zxTOjqcUxn8eVyH3myzr857KHXLpw=="],
+    "@cubing/icons": ["@cubing/icons@3.0.5", "", {}, "sha512-LA3BW9vf012HSN1FyeKXuDnOOnMeUXDDaXfAn4V9l06BFeMaHWiQGFF1Zod22r24TG/imQVhl4env1+jpkDzAw=="],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.4", "", { "os": "aix", "cpu": "ppc64" }, "sha512-1VCICWypeQKhVbE9oW/sJaAmjLxhVqacdkvPLEjwlttjfwENRSClS8EjBz0KzRyFSCPDIkuXW34Je/vk7zdB7Q=="],
 
