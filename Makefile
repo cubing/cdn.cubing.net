@@ -109,6 +109,7 @@ healthcheck-fastly-subdomain: setup
 
 .PHONY: healthcheck-cdn
 healthcheck-cdn: setup
+	bun x playwright install
 	bun run ./script/healthcheck/cdn.ts
 
 .PHONY: healthcheck-success-ping

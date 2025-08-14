@@ -9,3 +9,5 @@ const promises = [
 ];
 await Promise.allSettled(promises);
 await Promise.all(promises);
+
+await import("./cdn-js/test-twisty-player");
