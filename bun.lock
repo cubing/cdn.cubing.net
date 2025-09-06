@@ -15,6 +15,7 @@
         "@biomejs/biome": "^1.9.4",
         "@cubing/deploy": "v0.2.2",
         "@cubing/dev-config": "^0.3.5",
+        "@lgarron-repo/repo": "^0.8.6",
         "@types/bun": "^1.2.13",
         "cmd-ts-too": "^0.15.3",
         "esbuild": "^0.25.4",
@@ -98,6 +99,16 @@
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.25.4", "", { "os": "win32", "cpu": "x64" }, "sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ=="],
 
     "@fontsource/ubuntu": ["@fontsource/ubuntu@5.2.5", "", {}, "sha512-VKVFVqmJ9MGnOJW2dsQ982qHN8Zr+tNeEwEHnzt5VdGi9ZWL37wYFD32YsqukWlI/+I7v5ZkgHTEAvsZxU6aDA=="],
+
+    "@lgarron-repo/repo": ["@lgarron-repo/repo@0.8.6", "", { "optionalDependencies": { "@lgarron-repo/repo-aarch64-apple-darwin": "v0.8.6", "@lgarron-repo/repo-x86_64-apple-darwin": "v0.8.6", "@lgarron-repo/repo-x86_64-pc-windows": "v0.8.6", "@lgarron-repo/repo-x86_64-unknown-linux-gnu": "v0.8.6" }, "bin": { "repo": "repo.js" } }, "sha512-0Dp92PmpxpMvOij5T2qnVaEq4L0U/OaLIh580hcayNqMsewOnbEIn3NNVykHYe6jGiJPMri8RavJsgZ4Wr+ySw=="],
+
+    "@lgarron-repo/repo-aarch64-apple-darwin": ["@lgarron-repo/repo-aarch64-apple-darwin@0.8.6", "", { "os": "darwin", "cpu": "arm64", "bin": { "repo-aarch64-apple-darwin": "repo-aarch64-apple-darwin" } }, "sha512-+nBKpoRbdST7DAcBM4JhPSEp4R+3iF6cNLtMfB+wcTcSG2qFuRThRD30jMB/mo0w4X9IG2AQbO/6cEgPztIFeg=="],
+
+    "@lgarron-repo/repo-x86_64-apple-darwin": ["@lgarron-repo/repo-x86_64-apple-darwin@0.8.6", "", { "os": "darwin", "cpu": "x64", "bin": { "repo-x86_64-apple-darwin": "repo-x86_64-apple-darwin" } }, "sha512-yyrb2PSDH57e6EX8oLEU3dlRi9NrRNA1BJo0HSqQ2pQXKDo7tKXMsvoff27W8XW1jiDj0A1Rp6uoTXMTTcAQag=="],
+
+    "@lgarron-repo/repo-x86_64-pc-windows": ["@lgarron-repo/repo-x86_64-pc-windows@0.8.6", "", { "os": "none", "cpu": "x64", "bin": { "repo-x86_64-pc-windows": "repo-x86_64-pc-windows" } }, "sha512-Qez6x3PWXcp7A6RoYuBfU6nGEUpYABo6zz0Tr1LW2ZdOfFX17169gUqFmAvbg+Ainzk4Qp8L1DofkRhxV3yv3g=="],
+
+    "@lgarron-repo/repo-x86_64-unknown-linux-gnu": ["@lgarron-repo/repo-x86_64-unknown-linux-gnu@0.8.6", "", { "os": "linux", "cpu": "x64", "bin": { "repo-x86_64-unknown-linux-gnu": "repo-x86_64-unknown-linux-gnu" } }, "sha512-s2ZjQ39T1lWVFujOD/8KUc+p7QNOZ/19Qzi0zXHJO/kJ1rCzZix0e8aPMUS3kY3j/Q4D6H56J7N2EZYiCpg4vQ=="],
 
     "@tweenjs/tween.js": ["@tweenjs/tween.js@23.1.3", "", {}, "sha512-vJmvvwFxYuGnF2axRtPYocag6Clbb5YS7kLL+SO/TeVFzHqDIWrNKYtcsPMibjDx9O+bu+psAy9NKfWklassUA=="],
 
