@@ -33,16 +33,16 @@ reset: clean
 	rm -rf ./node_modules
 
 .PHONY: roll-cubing
-roll-cubing:
+roll-cubing: setup
 	git pull
-	./script/bump-package-commit.ts cubing
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit cubing
 	git push
 	make deploy
 
 .PHONY: roll-@cubing/icons
 roll-@cubing/icons:
 	git pull
-	./script/bump-package-commit.ts @cubing/icons
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit @cubing/icons
 	git push
 	make deploy
 
