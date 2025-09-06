@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@cubing/deploy": "v0.2.2",
+    "@cubing/deploy": "^0.2.3",
     "@cubing/dev-config": "^0.3.5",
     "@types/bun": "^1.2.13",
     "cmd-ts-too": "^0.15.3",

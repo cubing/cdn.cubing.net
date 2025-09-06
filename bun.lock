@@ -14,7 +14,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "^1.9.4",
-        "@cubing/deploy": "v0.2.2",
+        "@cubing/deploy": "^0.2.3",
         "@cubing/dev-config": "^0.3.5",
         "@types/bun": "^1.2.13",
         "cmd-ts-too": "^0.15.3",
@@ -42,7 +42,7 @@
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@1.9.4", "", { "os": "win32", "cpu": "x64" }, "sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA=="],
 
-    "@cubing/deploy": ["@cubing/deploy@0.2.2", "", { "dependencies": { "printable-shell-command": "0.1.0-pre3", "typescript": "^5.8.3" }, "bin": { "deploy": "dist/lib/@cubing/deploy/main.js" } }, "sha512-+AWXz2fRpDkX//CF0VmfisrpbQwI/yX/j1rmGH3xi9qDucDyfgXfcnVxuTQTY1vehfMYCRGb5X/+V5SI4Jn4wA=="],
+    "@cubing/deploy": ["@cubing/deploy@0.2.3", "", { "dependencies": { "printable-shell-command": "0.1.0-pre3", "typescript": "^5.8.3" }, "bin": { "deploy": "dist/bin/@cubing/deploy/main.js" } }, "sha512-h5SiBUVhUOtzYkauvzx6AtIG2UT9iKJ2XskgVrcnN2t7dyT+R2nJ4q05mPErIAoMqdzCdRXF2v8QaX7wieJ3fA=="],
 
     "@cubing/dev-config": ["@cubing/dev-config@0.3.5", "", { "dependencies": { "esbuild": "^0.25.3" } }, "sha512-qxtQ4M2bFFj/iVKhYRWnRp90be+hjYcLeFwvxFlS4EsoPdslF+3sN2DiC1j11qwOkOCFvoaHJL4QmrriQDPkjA=="],
 
