@@ -28,10 +28,10 @@ await build({
   splitting: true,
   ...commonOptions,
   external: [],
-  sourceRoot: "./src/compiled/",
+  sourceRoot: "./src/package-entries/",
   chunkNames: "v0/js/chunks/[name]-[hash]",
   outdir: DIST_FOLDER,
-  entryPoints: ["./src/compiled/**/*.ts"],
+  entryPoints: ["./src/package-entries/**/*.ts"],
 });
 
 await build({
@@ -40,9 +40,9 @@ await build({
     ".woff": "copy",
     ".woff2": "copy",
   },
-  sourceRoot: "./src/compiled/v0/css",
+  sourceRoot: "./src/package-entries/v0/css",
   outdir: join(DIST_FOLDER_V0, "css"),
-  entryPoints: ["./src/compiled/v0/css/**/*.css"],
+  entryPoints: ["./src/package-entries/v0/css/**/*.css"],
 });
 
 console.log("Done building.");
