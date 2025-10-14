@@ -15,7 +15,7 @@
     "build": "make build"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.2.6",
     "@cubing/deploy": "^0.2.3",
     "@cubing/dev-config": "^0.3.5",
     "@types/bun": "^1.2.21",
