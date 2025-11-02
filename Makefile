@@ -35,14 +35,14 @@ reset: clean
 .PHONY: roll-cubing
 roll-cubing: setup
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit --commit-using git cubing
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git cubing
 	git push
 	make deploy
 
 .PHONY: roll-@cubing/icons
 roll-@cubing/icons:
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit --commit-using git @cubing/icons
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git @cubing/icons
 	git push
 	make deploy
 
