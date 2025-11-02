@@ -46,14 +46,6 @@ roll-@cubing/icons:
 	git push
 	make deploy
 
-.PHONY: roll-cubing-commit
-roll-cubing-commit:
-	bash script/roll-cubing-commit.bash
-
-.PHONY: roll-icons-commit
-roll-icons-commit:
-	bash script/roll-icons-commit.bash
-
 # NOT `.PHONY`!
 ../cubing.js:
 	$(error `cubing.js` is not available in the parent folder of this repo)
