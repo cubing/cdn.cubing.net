@@ -36,6 +36,9 @@ reset: clean
 roll-cubing: setup
 	git pull
 	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git cubing
+	# Workaround for https://github.com/oven-sh/bun/issues/1343
+	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
+	make lint
 	git push
 	make deploy
 
@@ -43,6 +46,9 @@ roll-cubing: setup
 roll-@cubing/icons:
 	git pull
 	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git @cubing/icons
+	# Workaround for https://github.com/oven-sh/bun/issues/1343
+	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
+	make lint
 	git push
 	make deploy
 
