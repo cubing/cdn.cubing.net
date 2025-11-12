@@ -3,7 +3,7 @@ build: setup
 	bun run ./script/build.ts
 
 .PHONY: lint
-lint: lint-biome lint-tsc
+lint: lint-biome lint-tsc lint-bun-dedupe
 
 .PHONY: lint-biome
 lint-biome: setup
@@ -12,6 +12,10 @@ lint-biome: setup
 .PHONY: lint-tsc
 lint-tsc: setup
 	bun x tsc --noEmit --project ./tsconfig.json
+
+.PHONY: lint-bun-dedupe
+lint-bun-dedupe:
+	bun x bun-dedupe --check
 
 .PHONY: format
 format: setup
