@@ -39,7 +39,7 @@ reset: clean
 .PHONY: roll-cubing
 roll-cubing: setup
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git cubing
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git --pin-exact-version cubing
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
 	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
 	make lint
@@ -49,7 +49,7 @@ roll-cubing: setup
 .PHONY: roll-@cubing/icons
 roll-@cubing/icons:
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git @cubing/icons
+	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git --pin-exact-version @cubing/icons
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
 	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
 	make lint
