@@ -4,7 +4,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@cubing/icons": "v3.0.5",
+        "@cubing/icons": "=3.0.5",
         "@fontsource/ubuntu": "^5.2.8",
         "cubing": "=0.60.0",
         "random-uint-below": "^3.3.0",
