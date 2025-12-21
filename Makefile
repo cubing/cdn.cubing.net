@@ -2,24 +2,31 @@
 build: setup
 	bun run ./script/build.ts
 
+.PHONY: check
+check: lint build
+	@echo "To check the live site, run:"
+	@echo ""
+	@echo "    make healthcheck-cdn"
+	@echo "    make healthcheck-fastly-subdomain"
+
 .PHONY: lint
 lint: lint-biome lint-tsc lint-bun-dedupe
 
 .PHONY: lint-biome
 lint-biome: setup
-	bun x @biomejs/biome check
+	bun x -- bun-dx --package @biomejs/biome biome -- check
 
 .PHONY: lint-tsc
 lint-tsc: setup
-	bun x tsc --noEmit --project ./tsconfig.json
+	bun x -- bun-dx --package typescript tsc -- --project ./tsconfig.json
 
 .PHONY: lint-bun-dedupe
 lint-bun-dedupe:
-	bun x bun-dedupe --check
+	bun x -- bun-dx --package bun-dedupe dedupe -- --check
 
 .PHONY: format
 format: setup
-	bun x @biomejs/biome format --write
+	bun x -- bun-dx --package @biomejs/biome biome -- format --write
 
 .PHONY: setup
 setup:
@@ -39,9 +46,9 @@ reset: clean
 .PHONY: roll-cubing
 roll-cubing: setup
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git --pin-exact-version cubing
+	bun x -- bun-dx --package @lgarron-bin/repo repo -- dependencies --package-manager bun roll --commit-using git --pin-exact-version cubing
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
-	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
+	bun x -- bun-dx --package bun-dedupe dedupe -- && git commit --all --amend --no-edit && make reset setup
 	make lint
 	git push
 	make deploy
@@ -49,9 +56,9 @@ roll-cubing: setup
 .PHONY: roll-@cubing/icons
 roll-@cubing/icons:
 	git pull
-	bun x @lgarron-bin/repo dependencies --package-manager bun roll --commit-using git --pin-exact-version @cubing/icons
+	bun x -- bun-dx --package @lgarron-bin/repo repo -- dependencies --package-manager bun roll --commit-using git --pin-exact-version @cubing/icons
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
-	bun x bun-dedupe && git commit --all --amend --no-edit && make reset setup
+	bun x -- bun-dx --package bun-dedupe dedupe -- && git commit --all --amend --no-edit && make reset setup
 	make lint
 	git push
 	make deploy
@@ -85,7 +92,7 @@ serve-locally-with-linked-cubing.js: link-cubing.js serve-locally
 
 .PHONY: upload
 upload: clean build
-	bun x @cubing/deploy
+	bun x -- bun-dx --package @cubing/deploy deploy --
 
 .PHONY: purge-cache
 purge-cache: purge-cache-curl
@@ -111,7 +118,7 @@ healthcheck-fastly-subdomain: setup
 
 .PHONY: healthcheck-cdn
 healthcheck-cdn: setup
-	bun x playwright install
+	bun x -- bun-dx --package playwright playwright -- install
 	bun run ./script/healthcheck/cdn.ts
 
 .PHONY: healthcheck-success-ping
