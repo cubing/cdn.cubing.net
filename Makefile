@@ -48,7 +48,8 @@ roll-cubing: setup
 	git pull
 	bun x -- bun-dx --package @lgarron-bin/repo repo -- dependencies --package-manager bun roll --commit-using git --pin-exact-version cubing
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
-	bun x -- bun-dx --package bun-dedupe dedupe -- && git commit --all --amend --no-edit && make reset setup
+	# TODO: this runs more commands for the commit than the unedited commit message implies.
+	bun x -- bun-dx --package bun-dedupe dedupe -- && bun install && git commit --all --amend --no-edit && make reset setup
 	make lint
 	git push
 	make deploy
@@ -58,7 +59,8 @@ roll-@cubing/icons:
 	git pull
 	bun x -- bun-dx --package @lgarron-bin/repo repo -- dependencies --package-manager bun roll --commit-using git --pin-exact-version @cubing/icons
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
-	bun x -- bun-dx --package bun-dedupe dedupe -- && git commit --all --amend --no-edit && make reset setup
+	# TODO: this runs more commands for the commit than the unedited commit message implies.
+	bun x -- bun-dx --package bun-dedupe dedupe -- && bun install && git commit --all --amend --no-edit && make reset setup
 	make lint
 	git push
 	make deploy
