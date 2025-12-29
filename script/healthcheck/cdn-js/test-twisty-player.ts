@@ -8,9 +8,9 @@ async function attempt() {
   type GlobalThis = typeof globalThis & { player: TwistyPlayer };
 
   // Setup
-  const browser = await chromium.launch();
-  const context = await browser.newContext(devices["iPhone 11"]);
-  const page = await context.newPage();
+  await using browser = await chromium.launch();
+  await using context = await browser.newContext(devices["iPhone 11"]);
+  await using page = await context.newPage();
 
   await page.goto(
     new URL("test-twisty-player.html", import.meta.url).toString(),
@@ -82,10 +82,6 @@ async function attempt() {
     );
     assert(screenshot.startsWith("data:image/png;base64,"));
   });
-
-  // Teardown
-  await context.close();
-  await browser.close();
 }
 
 const MAX_NUM_ATTEMPTS = 5;
