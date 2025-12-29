@@ -1,3 +1,4 @@
+import { attemptWithRetries } from "./cdn-js/test-twisty-player";
 import { testURL } from "./testURL";
 
 const testFastlyURL = testURL.bind(testURL, "https://cdn.cubing.net/");
@@ -10,4 +11,4 @@ const promises = [
 await Promise.allSettled(promises);
 await Promise.all(promises);
 
-await import("./cdn-js/test-twisty-player");
+await attemptWithRetries();
