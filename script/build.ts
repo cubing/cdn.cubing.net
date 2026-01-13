@@ -24,7 +24,7 @@ const commonOptions = {
 
 await build({
   format: "esm",
-  target: "es2020",
+  target: "es2022",
   splitting: true,
   ...commonOptions,
   external: [],
