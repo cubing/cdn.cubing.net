@@ -13,6 +13,6 @@ This will automatically generate a commit [like this](https://github.com/cubing/
 - the GitHub repo,
 - the deploy server, and
 - a Fastly token with cache revocation access for `cdn.cubing.net` (if you want the changes to be available immediately).
-  - This must be stored at: `~/.ssh/secrets/FASTLY_CUBING_NET_API_TOKEN.txt`
+  - This must be stored at: `~/.local/secrets/cdn.cubing.net/FASTLY_CUBING_NET_API_TOKEN.txt`
 
 For packages other than `cubing`, you'll have to run `bun add [package]@latest` manually.
