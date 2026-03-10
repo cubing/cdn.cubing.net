@@ -1,4 +1,4 @@
-import { testURL } from "./testURL";
+import { testURL } from "./lib/testURL";
 
 const testFastlyURL = testURL.bind(testURL, "https://cdn.fastly.cubing.net/");
 

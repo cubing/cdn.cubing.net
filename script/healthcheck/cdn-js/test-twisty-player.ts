@@ -3,6 +3,7 @@ import { KPattern, type KPatternData } from "cubing/kpuzzle";
 import { cube3x3x3 } from "cubing/puzzles";
 import type { TwistyPlayer } from "cubing/twisty";
 import { chromium, devices } from "playwright";
+import { attemptWithRetries } from "../lib/attemptWithRetries";
 
 async function attempt() {
   type GlobalThis = typeof globalThis & { player: TwistyPlayer };
@@ -84,16 +85,4 @@ async function attempt() {
   });
 }
 
-const MAX_NUM_ATTEMPTS = 5;
-export async function attemptWithRetries(options?: { numRetries?: number }) {
-  for (let i = 0; i < (options?.numRetries ?? MAX_NUM_ATTEMPTS); i++) {
-    try {
-      await attempt();
-      return;
-    } catch (e) {
-      console.error(e);
-    }
-  }
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  throw new Error("Failed all retries.");
-}
+await attemptWithRetries(attempt);
