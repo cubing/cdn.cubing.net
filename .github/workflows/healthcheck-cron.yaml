@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v2
       - run: make healthcheck-fastly-subdomain
       - run: make healthcheck-cdn
       # TODO: turn this into a reusable workflow: https://github.com/cubing/actions-workflows/issues/2
