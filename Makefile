@@ -122,6 +122,7 @@ healthcheck-fastly-subdomain: setup
 healthcheck-cdn: setup
 	bun x -- bun-dx --package playwright playwright -- install
 	bun run ./script/healthcheck/cdn.ts
+	bun run ./script/healthcheck/cdn-js/test-twisty-player.ts
 
 .PHONY: healthcheck-success-ping
 healthcheck-success-ping: setup
