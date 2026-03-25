@@ -19,34 +19,22 @@
   <p>Visit <a href="https://js.cubing.net/cubing/">js.cubing.net</a> to learn how to use <b>cdn.cubing.net</b> for your
     cubing website or web app.</p>
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
     html {
       font-family: Ubuntu, -apple-system, Roboto, Tahoma, sans-serif;
       display: grid;
       justify-content: center;
       padding: 2em;
       font-size: 1.1rem;
-      /* adjustment for cdn.cubing.net */
     }
 
     body {
       width: 100%;
       max-width: 40em;
       margin: 0;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      html {
-        background: #000D;
-        color: #EEE;
-      }
-
-      a {
-        color: #669df5;
-      }
-
-      a:visited {
-        color: #af73d5;
-      }
     }
   </style>
   <br>
@@ -60,52 +48,46 @@
 
       /* We'd set the opacity, but that also affects text selection. */
       .boilerplate {
-        color: #BBB;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        .boilerplate {
-          color: #777;
-        }
+        color: light-dark(#BBB, #777);
       }
     </style>
     <summary title="Press to expand.">Available modules and packages</summary>
     <ul>
       <li><code>cubing.js modules:</code>
         <ul>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/alg</code> <span
               title="Very useful!">⭐️</span>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/bluetooth</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/kpuzzle</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/notation</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/protocol</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/puzzle-geometry</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/puzzles</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/scramble</code> <span
               title="Very useful!">⭐️</span>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/search</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/stream</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>cubing/twisty</code> <span
               title="Very useful!">⭐️</span>
           </li>
@@ -113,24 +95,24 @@
       </li>
       <li>Other JS modules:
         <ul>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>three</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>random-uint-below</code>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/js/</span>scramble-display</code>
           </li>
         </ul>
       </li>
       <li>CSS packages:
         <ul>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/css/</span>@cubing/icons/css</code> <span
               title="Very useful!">⭐️</span>
           </li>
-          <li><button title="Copy">📋</button>
+          <li><button title="Press to copy">📋</button>
             <code><span class="boilerplate">https://cdn.cubing.net/v0/css/</span>@fontsource/ubuntu</code>
           </li>
         </ul>
@@ -138,22 +120,29 @@
     </ul>
     A ⭐️ indicates a popular module/package.
     <style>
-      code {
-        user-select: all
-      }
-
-      button[title=Copy] {
+      button[title='Press to copy'] {
         appearance: none;
         background: none;
         border: none;
-      }
 
-      button[title=Copy]:hover {
-        cursor: pointer;
+        &+code {
+          user-select: all;
+          padding: 0.1em 0.25em;
+          margin: -0.1em -0.25em;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          &+code {
+            background: light-dark(#D8F0FF, #136);
+          }
+        }
+
       }
     </style>
     <script>
-      for (const button of document.querySelectorAll("button[title=Copy]")) {
+      for (const button of document.querySelectorAll("button[title='Press to copy']")) {
         button.addEventListener("click", () => {
           const codeElem = button.parentElement.querySelector("code");
           navigator.clipboard.writeText(codeElem.textContent)
@@ -228,10 +217,10 @@ https://github.com/cubing/cdn.cubing.net
   <style>
     .source-code-link {
       opacity: 0;
-    }
 
-    .source-code-link:focus-within {
-      opacity: 1;
+      &:focus-within {
+        opacity: 1;
+      }
     }
   </style>
 
