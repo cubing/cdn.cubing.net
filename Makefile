@@ -18,10 +18,10 @@ lint-biome: setup
 
 .PHONY: lint-tsc
 lint-tsc: setup
-	bun x -- bun-dx --package typescript tsc -- --project ./tsconfig.json
+	bun x -- bun-dx --package @typescript/native-preview tsgo -- --project ./tsconfig.json
 
 .PHONY: lint-bun-dedupe
-lint-bun-dedupe:
+lint-bun-dedupe: setup
 	bun x -- bun-dx --package bun-dedupe dedupe -- --check
 
 .PHONY: format
@@ -35,13 +35,15 @@ setup:
 .PHONY: deploy
 deploy: clean build upload purge-cache post-deploy
 
+RM_RF = bun -e 'process.argv.slice(1).map(p => process.getBuiltinModule("node:fs").rmSync(p, {recursive: true, force: true, maxRetries: 5}))' --
+
 .PHONY: clean
 clean:
-	rm -rf ./dist ./package-lock.json
+	${RM_RF} ./dist ./package-lock.json
 
 .PHONY: reset
 reset: clean
-	rm -rf ./node_modules
+	${RM_RF} ./node_modules/
 
 .PHONY: roll-cubing
 roll-cubing: setup
@@ -55,7 +57,7 @@ roll-cubing: setup
 	make deploy
 
 .PHONY: roll-@cubing/icons
-roll-@cubing/icons:
+roll-@cubing/icons: setup
 	git pull
 	bun x -- bun-dx --package @lgarron-bin/repo repo -- dependencies --package-manager bun roll --commit-using git --pin-exact-version @cubing/icons
 	# Workaround for https://github.com/oven-sh/bun/issues/1343
@@ -69,6 +71,7 @@ roll-@cubing/icons:
 ../cubing.js:
 	$(error `cubing.js` is not available in the parent folder of this repo)
 
+# TODO: this breaks TypeScript type checking with isolated installs?
 .PHONY: link-cubing.js
 link-cubing.js: ../cubing.js
 	cd ../cubing.js && make link
@@ -121,8 +124,8 @@ healthcheck-fastly-subdomain: setup
 .PHONY: healthcheck-cdn
 healthcheck-cdn: setup
 	bun x -- bun-dx --package playwright playwright -- install
-	bun run ./script/healthcheck/cdn.ts
-	bun run ./script/healthcheck/cdn-js/test-twisty-player.ts
+	bun run -- ./script/healthcheck/cdn.ts
+	bun run -- ./script/healthcheck/cdn-js/test-twisty-player.ts
 
 .PHONY: healthcheck-success-ping
 healthcheck-success-ping: setup

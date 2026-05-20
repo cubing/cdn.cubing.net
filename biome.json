@@ -3,5 +3,12 @@
   "extends": ["./node_modules/@cubing/dev-config/biome/biome.json"],
   "files": {
     "includes": ["**", "!dist", "!package.json"]
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "useButtonType": "off"
+      }
+    }
   }
 }
