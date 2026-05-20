@@ -10,7 +10,7 @@ check: lint build
 	@echo "    make healthcheck-fastly-subdomain"
 
 .PHONY: lint
-lint: lint-biome lint-tsc lint-bun-dedupe
+lint: lint-biome lint-tsc lint-ubuntu-css lint-bun-dedupe
 
 .PHONY: lint-biome
 lint-biome: setup
@@ -19,6 +19,10 @@ lint-biome: setup
 .PHONY: lint-tsc
 lint-tsc: setup
 	bun x -- bun-dx --package @typescript/native-preview tsgo -- --project ./tsconfig.json
+
+.PHONY: lint-ubuntu-css
+lint-ubuntu-css: setup
+	bun run -- './script/generate-ubuntu.ts' check
 
 .PHONY: lint-bun-dedupe
 lint-bun-dedupe: setup
