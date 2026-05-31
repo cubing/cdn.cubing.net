@@ -131,6 +131,10 @@ healthcheck-cdn: setup
 	bun run -- ./script/healthcheck/cdn.ts
 	bun run -- ./script/healthcheck/cdn-js/test-twisty-player.ts
 
+.PHONY: healthcheck-start-ping
+healthcheck-start-ping: setup
+	bun run ./script/healthcheck/start-ping.ts
+
 .PHONY: healthcheck-success-ping
 healthcheck-success-ping: setup
 	bun run ./script/healthcheck/success-ping.ts

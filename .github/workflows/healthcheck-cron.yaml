@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: oven-sh/setup-bun@v2
+      # TODO: turn this into a reusable workflow: https://github.com/cubing/actions-workflows/issues/2
+      - name: make healthcheck-start-ping
+        env:
+          HEALTHCHECK_SUCCESS_PING_URL: ${{ secrets.HEALTHCHECK_SUCCESS_PING_URL }}
+        run: make healthcheck-start-ping
       - run: make healthcheck-fastly-subdomain
       - run: make healthcheck-cdn
       # TODO: turn this into a reusable workflow: https://github.com/cubing/actions-workflows/issues/2
