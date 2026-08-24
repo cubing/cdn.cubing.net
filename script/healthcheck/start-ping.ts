@@ -11,4 +11,4 @@ if (!url) {
   exit(1);
 }
 
-await fetch(url + "/start");
+await fetch(`${url}/start`);
