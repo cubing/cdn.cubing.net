@@ -31,9 +31,6 @@
       },
     },
   },
-  "patchedDependencies": {
-    "cubing@0.63.3": "patches/cubing@0.63.3.patch",
-  },
   "overrides": {
     "@types/web-bluetooth": "0.0.20",
   },

@@ -34,8 +34,5 @@
     "https://cdn.fastly.cubing.net/": {
       "fromLocalDir": "./dist/web/cdn.cubing.net/"
     }
-  },
-  "patchedDependencies": {
-    "cubing@0.63.3": "patches/cubing@0.63.3.patch"
   }
 }
