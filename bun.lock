@@ -5,7 +5,7 @@
     "": {
       "dependencies": {
         "@cubing/icons": "=3.0.5",
-        "@fontsource/ubuntu": "^5.2.8",
+        "@cubing/thirdparty-fonts": "^0.1.0",
         "@types/node": "^25.9.1",
         "cubing": "=0.65.1",
         "random-uint-below": "^3.3.0",
@@ -61,6 +61,8 @@
 
     "@cubing/lazy-promise": ["@cubing/lazy-promise@0.1.3", "", {}, "sha512-WVnnVWnmX2W4GvBTk496JP4EHi9JLxtVT2WpdbgRuUN8OXpEu5AMCY1AJPj2NTeiUe/hf8bit8Y6QAyXjMorZw=="],
 
+    "@cubing/thirdparty-fonts": ["@cubing/thirdparty-fonts@0.1.0", "", { "dependencies": { "@fontsource/ubuntu": "^5.3.0" } }, "sha512-hVWWZmB2NzwybVY3fsmDscFrVIx2irEjaq2/6vrYdltt+8u3ePbO4iLO766Z1qnVo6YpjAy/DJ8o8rpEgeAtbg=="],
+
     "@dimforge/rapier3d-compat": ["@dimforge/rapier3d-compat@0.12.0", "", {}, "sha512-uekIGetywIgopfD97oDL5PfeezkFpNhwlzlaEYNOA0N6ghdsOvh/HYjSMek5Q2O1PYvRSDFcqFVJl4r4ZBwOow=="],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.28.0", "", { "os": "aix", "cpu": "ppc64" }, "sha512-lhRUCeuOyJQURhTxl4WkpFTjIsbDayJHih5kZC1giwE+MhIzAb7mEsQMqMf18rHLsrb5qI1tafG20mLxEWcWlA=="],
@@ -115,7 +117,7 @@
 
     "@esbuild/win32-x64": ["@esbuild/win32-x64@0.28.0", "", { "os": "win32", "cpu": "x64" }, "sha512-pEl1bO9mfAmIC+tW5btTmrKaujg3zGtUmWNdCw/xs70FBjwAL3o9OEKNHvNmnyylD6ubxUERiEhdsL0xBQ9efw=="],
 
-    "@fontsource/ubuntu": ["@fontsource/ubuntu@5.2.8", "", {}, "sha512-esSJCpgigwWOm4Ug9f7AMozUyBq5Iobea5C9QYsl2OlCb62wZABBUbXahHLdFv5Ru4lJCD9tUX6xEAeLwUTNBg=="],
+    "@fontsource/ubuntu": ["@fontsource/ubuntu@5.3.0", "", {}, "sha512-LsjJXgE430QLs8LKfn1RIFbbdGAiZBU1gao8ASa4Z2kGNGh7lMb7Rzx09v3bLLuuK+3XA/JSLgPWTAbLD6r1fg=="],
 
     "@lgarron-bin/repo": ["@lgarron-bin/repo@0.15.3", "", { "optionalDependencies": { "@lgarron-bin/repo-aarch64-apple-darwin": "v0.15.3", "@lgarron-bin/repo-aarch64-pc-windows": "v0.15.3", "@lgarron-bin/repo-aarch64-unknown-linux-gnu": "v0.15.3", "@lgarron-bin/repo-x86_64-apple-darwin": "v0.15.3", "@lgarron-bin/repo-x86_64-pc-windows": "v0.15.3", "@lgarron-bin/repo-x86_64-unknown-linux-gnu": "v0.15.3" }, "bin": { "repo": "repo.js" } }, "sha512-vwHBNT4EItiT0gb9GcjQ6OmLhmCQBOF6Rdea3LwXyxzx9UMQmP6t+R8Cl11r9A/t7xSGJeLByT/bPsE+rS69fg=="],
 
