@@ -39,6 +39,7 @@ await build({
   loader: {
     ".woff": "copy",
     ".woff2": "copy",
+    ".ttf": "copy",
   },
   sourceRoot: "./src/package-entries/v0/css",
   outdir: join(DIST_FOLDER_V0, "css"),
